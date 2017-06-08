@@ -41,16 +41,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">App Engine Guestbook</a>
-          <div class="nav-collapse collapse pull-right">
+          <a class="brand" href="#">Cross Mode</a>
+          <!-- <div class="nav-collapse collapse pull-right">
             <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <div class="container">
       <!-- [START greetings] -->
-      {% for greeting in greetings %}
+      <!-- {% for greeting in greetings %}
       <div class="row">
         {% if greeting.author %}
           <b>{{ greeting.author.email }}
@@ -63,22 +63,26 @@
         {% endif %}
         <blockquote>{{ greeting.content }}</blockquote>
       </div>
-      {% endfor %}
+      {% endfor %} -->
       <!-- [END greetings] -->
 
       <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-        <div><textarea name="content" class="input-block-level" rows="3"></textarea></div>
-        <div><input type="submit" class="btn btn-large btn-primary" value="Sign Guestbook"></div>
+        <!-- <div><textarea name="content" class="input-block-level" rows="3"></textarea></div> -->
+        <div>姓名： <input name="name" type ="text" class="input-block-level"></div>
+        <div>邮箱： <input name="email" type ="text" class="input-block-level"></div>
+        <div>年龄： <input name="age" type ="text" class="input-block-level"></div>
+        <div>性别： <input name="sex" type ="text" class="input-block-level"></div>
+        <div><input type="submit" class="btn btn-large btn-primary" value="注册"></div>
       </form>
 
       <hr>
 
-      <form>Guestbook name:
+      <!-- <form>Guestbook name:
         <input value="{{ guestbook_name }}" name="guestbook_name">
         <input type="submit" value="switch">
-      </form>
+      </form> -->
 
-      <a href="{{ url|safe }}">{{ url_linktext }}</a>
+      <!-- <a href="{{ url|safe }}">{{ url_linktext }}</a> -->
     </div>
   </body>
 </html>
