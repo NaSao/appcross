@@ -4,9 +4,9 @@ threadsafe: true
 
 # [START handlers]
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+- url: /crossmodepic\.jpg
+  static_files: crossmodepic.jpg
+  upload: crossmodepic\.jpg
 
 - url: /bootstrap
   static_dir: bootstrap
