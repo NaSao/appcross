@@ -78,14 +78,14 @@ class MainPage(webapp2.RequestHandler):
         else:
             url = users.create_login_url(self.request.uri)
             url_linktext = 'Login'
-
-        template_values = {
-            'user': user,
-            'greetings': greetings,
-            'guestbook_name': urllib.quote_plus(guestbook_name),
-            'url': url,
-            'url_linktext': url_linktext,
-        }
+        template_values = {}
+#         template_values = {
+#             'user': user,
+#             'greetings': greetings,
+#             'guestbook_name': urllib.quote_plus(guestbook_name),
+#             'url': url,
+#             'url_linktext': url_linktext,
+#         }
 
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
