@@ -116,7 +116,7 @@ class Guestbook(webapp2.RequestHandler):
         greeting.put()
 
         query_params = {'guestbook_name': guestbook_name}
-        self.redirect('guestbook2')
+        self.redirect('/?' + urllib.urlencode(query_params))
 # [END guestbook]
 
 
