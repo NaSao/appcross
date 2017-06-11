@@ -14,8 +14,12 @@ handlers:
 - url: /register
   static_dir: register
 
-- url: /.*
+- url: /register/.*
   script: guestbook.app
+  
+- url: /price/.*
+  script: guestbook2.app  
+  
 # [END handlers]
 
 # [START libraries]
