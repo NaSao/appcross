@@ -90,7 +90,7 @@ class MainPage(webapp2.RequestHandler):
 #         }
 #       template = JINJA_ENVIRONMENT.get_template('register.html')
         template = JINJA_ENVIRONMENT.get_template('register.html')
-#       self.response.write(template.render(template_values))
+        self.response.write(template.render(template_values))
 # [END main_page]
 
 
