@@ -103,20 +103,17 @@ class Guestbook(webapp2.RequestHandler):
         # single entity group will be consistent. However, the write
         # rate to a single entity group should be limited to
         # ~1/second.
-        guestbook_name = self.request.get('name',
-                                          DEFAULT_GUESTBOOK_NAME)
-        greeting = Greeting(parent=guestbook_key(guestbook_name))
-
-        if users.get_current_user():
-            greeting.author = Author(
-                    identity=users.get_current_user().user_id(),
-                    email=users.get_current_user().email())
-
-        greeting.content = self.request.get('content')
-        greeting.put()
-
-        query_params = {'guestbook_name': guestbook_name}
-        self.redirect('/?' + urllib.urlencode(query_params))
+        template_values = {}
+#         template_values = {
+#             'user': user,
+#             'greetings': greetings,
+#             'guestbook_name': urllib.quote_plus(guestbook_name),
+#             'url': url,
+#             'url_linktext': url_linktext,
+#         }
+#       template = JINJA_ENVIRONMENT.get_template('register.html')
+        template = JINJA_ENVIRONMENT.get_template('price.html')
+        self.response.write(template.render(template_values))
 # [END guestbook]
 
 
