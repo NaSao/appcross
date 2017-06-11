@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+{% autoescape true %}
 <html>
   <head>
     <title>Home</title>
@@ -32,10 +34,10 @@
           <p><span></span></p>
         </div>
       </div>
-
+	  <form>
       <!-- 邮箱 (Text Field) -->
       <div id="u2" class="ax_default text_field" data-label="邮箱">
-        <input id="u2_input" type="email" value=""/>
+        <input id="u2_input" type="email" value="" name="email"/>
       </div>
 
       <!-- 邮箱 (Text Field) [footnote] -->
@@ -61,7 +63,7 @@
 
       <!-- 电话号码 (Text Field) -->
       <div id="u7" class="ax_default text_field" data-label="电话号码">
-        <input id="u7_input" type="tel" value=""/>
+        <input id="u7_input" type="tel" value="" name="tel"/>
       </div>
 
       <!-- 按钮 (HTML Button) -->
@@ -110,7 +112,7 @@
 
       <!-- 姓名 (Text Field) -->
       <div id="u16" class="ax_default text_field" data-label="姓名">
-        <input id="u16_input" type="text" value=""/>
+        <input id="u16_input" type="text" value="" name="name"/>
       </div>
 
       <!-- 姓名 (Text Field) [footnote] -->
@@ -136,6 +138,8 @@
           <option value="+48">+48</option>
         </select>
       </div>
+      </form>
     </div>
   </body>
 </html>
+{% endautoescape %}
