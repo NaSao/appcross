@@ -14,7 +14,7 @@ handlers:
 - url: /register
   static_dir: register
 
-- url: /
+- url: /.*
   script: guestbook.app
    
   
