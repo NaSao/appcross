@@ -116,10 +116,33 @@ class Guestbook(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
 # [END guestbook]
 
+# [START QCode]
+class QCode(webapp2.RequestHandler):
+
+    def post(self):
+        # We set the same parent key on the 'Greeting' to ensure each
+        # Greeting is in the same entity group. Queries across the
+        # single entity group will be consistent. However, the write
+        # rate to a single entity group should be limited to
+        # ~1/second.
+        template_values = {}
+#         template_values = {
+#             'user': user,
+#             'greetings': greetings,
+#             'guestbook_name': urllib.quote_plus(guestbook_name),
+#             'url': url,
+#             'url_linktext': url_linktext,
+#         }
+#       template = JINJA_ENVIRONMENT.get_template('register.html')
+        template = JINJA_ENVIRONMENT.get_template('qcode.html')
+        self.response.write(template.render(template_values))
+# [END QCode]
+
 
 # [START app]
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/price', Guestbook),
+    ('/qcode', QCode),
 ], debug=True)
 # [END app]
