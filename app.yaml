@@ -18,7 +18,7 @@ handlers:
   static_dir: price
   
 - url: /.*
-  script: guestbook.app
+  script: eyeshow.app
    
   
 # [END handlers]

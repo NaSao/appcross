@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 {% autoescape true %}
 <html>
   <head>
@@ -42,16 +41,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Cross Mode</a>
-          <!-- <div class="nav-collapse collapse pull-right">
+          <a class="brand" href="#">App Engine Guestbook</a>
+          <div class="nav-collapse collapse pull-right">
             <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
     <div class="container">
       <!-- [START greetings] -->
-      <!-- {% for greeting in greetings %}
+      {% for greeting in greetings %}
       <div class="row">
         {% if greeting.author %}
           <b>{{ greeting.author.email }}
@@ -64,27 +63,22 @@
         {% endif %}
         <blockquote>{{ greeting.content }}</blockquote>
       </div>
-      {% endfor %} -->
+      {% endfor %}
       <!-- [END greetings] -->
 
       <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-        <!-- <div><textarea name="content" class="input-block-level" rows="3"></textarea></div> -->
-        <div><img src="/crossmodepic.jpg" align="middle"></div>
-        <div><label for="name">Name</label><input name="name" id="name" type ="text" align="middle"></div>
-        <div><label for="email">Email</label><input name="email" id="email" type ="text" align="middle"></div>
-        <div><label for="age">Age</label><input name="age" id="age" type ="text" align="middle"></div>
-        <div><label for="sex">Sex</label><input name="sex" id="sex" type ="text" align="middle"></div>
-        <div><input type="submit" class="btn btn-large btn-primary" value="Register" align="middle"></div>
+        <div><textarea name="content" class="input-block-level" rows="3"></textarea></div>
+        <div><input type="submit" class="btn btn-large btn-primary" value="Sign Guestbook"></div>
       </form>
 
       <hr>
 
-      <!-- <form>Guestbook name:
+      <form>Guestbook name:
         <input value="{{ guestbook_name }}" name="guestbook_name">
         <input type="submit" value="switch">
-      </form> -->
+      </form>
 
-      <!-- <a href="{{ url|safe }}">{{ url_linktext }}</a> -->
+      <a href="{{ url|safe }}">{{ url_linktext }}</a>
     </div>
   </body>
 </html>

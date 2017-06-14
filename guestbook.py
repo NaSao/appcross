@@ -18,7 +18,6 @@
 import os
 import urllib
 
-from google.appengine.api import users
 from google.appengine.ext import ndb
 
 import jinja2
@@ -31,7 +30,8 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 # [END imports]
 
 DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
-
+USER_INFO = 'user_info'
+DISCOUNT_LOG = 'discount_log'
 
 # We set a parent key on the 'Greetings' to ensure that they are all
 # in the same entity group. Queries across the single entity group
@@ -59,6 +59,8 @@ class Greeting(ndb.Model):
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
 # [END greeting]
+
+
 
 
 # [START main_page]
