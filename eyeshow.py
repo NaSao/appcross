@@ -1,18 +1,3 @@
-#!/usr/bin/env python
-
-# Copyright 2016 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 # [START imports]
 import os
@@ -23,12 +8,13 @@ from google.appengine.ext import ndb
 
 import jinja2
 import webapp2
-from PIL import Image
+#from PIL import Image
 import qrcode
 import uuid
-import urllib
 import urlparse
 from google.appengine.api import images
+
+
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -123,41 +109,41 @@ class Discounting(webapp2.RequestHandler):
         
         
         #show qrcode start
-        qr = qrcode.QRCode(
-            version = 1,
-            error_correction = qrcode.constants.ERROR_CORRECT_L,     
-            box_size = 10,     
-            border = 4,
-    
-        )
-        
-        data = url_add_params(url, uuid)
-
-        qr.add_data(data) 
-        qr.make(fit=True)  
-        img = qr.make_image()
-        img = img.convert("RGBA")
-        icon = Image.open("icon1.png")
-        img_w, img_h = img.size
-        factor = 4
-        size_w = int(img_w / factor)
-        size_h = int(img_h / factor)
-
-        icon_w, icon_h = icon.size
-        if icon_w > size_w:
-            icon_w = size_w
-        if icon_h > size_h:
-            icon_h = size_h
-        icon = icon.resize((icon_w, icon_h), Image.ANTIALIAS)
-
-        w = int((img_w - icon_w) / 2)
-        h = int((img_h - icon_h) / 2)
-        img.paste(icon, (w, h), icon)
-        photo = images.Image(img.full_size_image)
-        thumbnail = photo.execute_transforms(output_encoding=images.JPEG)
-        self.response.headers['Content-Type'] = 'image/jpeg'
-        self.response.out.write(thumbnail)
-        return
+#         qr = qrcode.QRCode(
+#             version = 1,
+#             error_correction = qrcode.constants.ERROR_CORRECT_L,     
+#             box_size = 10,     
+#             border = 4,
+#     
+#         )
+#         
+#         data = url_add_params(url, uuid)
+# 
+#         qr.add_data(data) 
+#         qr.make(fit=True)  
+#         img = qr.make_image()
+#         img = img.convert("RGBA")
+#         icon = Image.open("icon1.png")
+#         img_w, img_h = img.size
+#         factor = 4
+#         size_w = int(img_w / factor)
+#         size_h = int(img_h / factor)
+# 
+#         icon_w, icon_h = icon.size
+#         if icon_w > size_w:
+#             icon_w = size_w
+#         if icon_h > size_h:
+#             icon_h = size_h
+#         icon = icon.resize((icon_w, icon_h), Image.ANTIALIAS)
+# 
+#         w = int((img_w - icon_w) / 2)
+#         h = int((img_h - icon_h) / 2)
+#         img.paste(icon, (w, h), icon)
+#         photo = images.Image(img.full_size_image)
+#         thumbnail = photo.execute_transforms(output_encoding=images.JPEG)
+#         self.response.headers['Content-Type'] = 'image/jpeg'
+#         self.response.out.write(thumbnail)
+#         return
         #show qrcode end
     
 # [END Discounting]
