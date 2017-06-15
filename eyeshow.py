@@ -24,10 +24,10 @@ url = 'https://mystical-healer-168312.appspot.com/'
 
 
 
-def QRCode_generator(uuid):
+def QRCode_generator(duuid):
         width = 200
         length = 200   
-        data = url+'?uuid='+ uuid
+        data = url+'?uuid='+ duuid
         return 'http://chart.apis.google.com/chart?cht=qr'+'&chs='+ str(width)+'x' + str(length) + '&chl='+ data
 
 
@@ -99,18 +99,18 @@ class Discounting(webapp2.RequestHandler):
     def get(self):
         #save discount info start
         price = self.request.get('price')
-        uuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode'))
+        duuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode'))
         discountorOpenid = self.request.get('discountorOpenid')
         
         discountinfo = DiscountInfo()
-        discountinfo.uuid=uuid
+        discountinfo.uuid=duuid
         discountinfo.discountor=discountorOpenid
         discountinfo.originalPrice=price
         #0 is not used,1 is used
         discountinfo.state="0"
         discountinfo.put()
         #save discount info end
-        url = QRCode_generator(uuid)
+        url = QRCode_generator(duuid)
        
         self.response.out.write("<html><body>")
         self.response.out.write("<p>"+url+"</p>")
