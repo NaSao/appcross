@@ -1,6 +1,6 @@
 # [START imports]
 import os
-import urllib
+import urllib2
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
@@ -104,7 +104,7 @@ class Discounting(webapp2.RequestHandler):
         discountorOpenid = self.request.get('discountorOpenid')
         
         discountinfo = DiscountInfo()
-        discountinfo.uuid=duuid
+        discountinfo.duuid=duuid
         discountinfo.openid=discountorOpenid
         discountinfo.originalPrice=price
         #0 is not used,1 is used
@@ -112,11 +112,8 @@ class Discounting(webapp2.RequestHandler):
         discountinfo.put()
         #save discount info end
         url = QRCode_generator(duuid)
-        result = urlfetch.fetch(url)
-        if result.status_code == 200:
-            self.response.write(result)
-        else:
-            self.response.status_code = result.status_code
+        result = urllib2.urlopen(url)
+        self.response.out.write(result)
     
 # [END Discounting]
 
