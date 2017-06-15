@@ -4,7 +4,7 @@ import urllib2
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
-from google.appengine.api import urlfetch
+#from google.appengine.api import urlfetch
 
 import jinja2
 import webapp2
@@ -112,8 +112,7 @@ class Discounting(webapp2.RequestHandler):
         discountinfo.put()
         #save discount info end
         url = QRCode_generator(duuid)
-        result = urllib2.urlopen(url)
-        self.response.out.write(result)
+        self.response.out.write('<div><img src="'+url+'"></img></div>')
     
 # [END Discounting]
 
