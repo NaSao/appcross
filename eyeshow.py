@@ -21,7 +21,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
 DISCOUNTOR_INFO = 'discountor_info'
 DISCOUNT_LOG = 'discount_log'
-url = 'https://mystical-healer-168312.appspot.com/'
+url = 'https://mystical-healer-168312.appspot.com/qcode'
 
 
 
@@ -123,6 +123,7 @@ class Discounting(webapp2.RequestHandler):
 class QCode(webapp2.RequestHandler):
 
     def post(self):
+        duuid = self.request.get('uuid')
         template_values = {}
 #         template_values = {
 #             'user': user,
