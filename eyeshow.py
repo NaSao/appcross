@@ -9,9 +9,9 @@ from google.appengine.ext import ndb
 import jinja2
 import webapp2
 #from PIL import Image
-import qrcode
-import uuid
-import urlparse
+# import qrcode
+# import uuid
+# import urlparse
 from google.appengine.api import images
 
 
@@ -32,14 +32,14 @@ url = 'https://mystical-healer-168312.appspot.com/'
 # ~1/second.
 
 
-def url_add_params(url, **params):
-    '''add new params to web url'''
-    pr = urlparse.urlparse(url)
-    query = dict(urlparse.parse_qsl(pr.query))
-    query.update(params)
-    prlist = list(pr)
-    prlist[4] = urllib.urlencode(query)
-    return urlparse.ParseResult(*prlist).geturl()
+# def url_add_params(url, **params):
+#     '''add new params to web url'''
+#     pr = urlparse.urlparse(url)
+#     query = dict(urlparse.parse_qsl(pr.query))
+#     query.update(params)
+#     prlist = list(pr)
+#     prlist[4] = urllib.urlencode(query)
+#     return urlparse.ParseResult(*prlist).geturl()
 
 
 # [START discount]
@@ -98,10 +98,10 @@ class Discounting(webapp2.RequestHandler):
     def get(self):
         #save discount info start
         price = self.request.get('price')
-        uuid = uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode')
+#         uuid = uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode')
         discountorOpenid = self.request.get('discountorOpenid')
         discountinfo = DiscountInfo()
-        discountinfo.uuid=uuid
+#         discountinfo.uuid=uuid
         discountinfo.discountor=discountorOpenid
         discountinfo.originalPrice=price
         discountinfo.put()
