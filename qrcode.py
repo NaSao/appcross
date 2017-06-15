@@ -1,6 +1,6 @@
 import uuid
 
-url = 'https://mystical-healer-168312.appspot.com/qcode/'
+url = 'https://mystical-healer-168312.appspot.com/qcode'
    
 def QRCode_generator():
     width = 200
