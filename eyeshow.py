@@ -51,7 +51,7 @@ class Discountor(ndb.Model):
     tel = ndb.StringProperty(indexed=False)
     
 class DiscountInfo(ndb.Model):
-    duuid = ndb.StructuredProperty(indexed=True)
+    duuid = ndb.StructuredProperty(indexed=False)
     discountor = ndb.StructuredProperty(Discountor)
     originalPrice = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
