@@ -42,7 +42,7 @@ class Discountor(ndb.Model):
     
 class DiscountInfo(ndb.Model):
     duuid = ndb.StringProperty(indexed=True)
-    discountor = ndb.StructuredProperty(Discountor)
+    openid = ndb.StringProperty(indexed=False)
     originalPrice = ndb.StringProperty(indexed=False)
     state = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
@@ -104,7 +104,7 @@ class Discounting(webapp2.RequestHandler):
         
         discountinfo = DiscountInfo()
         discountinfo.uuid=duuid
-        discountinfo.discountor=discountorOpenid
+        discountinfo.openid=discountorOpenid
         discountinfo.originalPrice=price
         #0 is not used,1 is used
         discountinfo.state="0"
