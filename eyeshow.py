@@ -114,7 +114,7 @@ class Discounting(webapp2.RequestHandler):
         url = QRCode_generator(duuid)
         result = urlfetch.fetch(url)
         if result.status_code == 200:
-            self.response.write(result.content)
+            self.response.write(result)
         else:
             self.response.status_code = result.status_code
     
