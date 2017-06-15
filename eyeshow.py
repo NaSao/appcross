@@ -88,7 +88,7 @@ class Register(webapp2.RequestHandler):
         discountor.openid = discountorOpenid
         discountor.name = self.request.get('name')
         discountor.email = self.request.get('email')
-        discountor.sex = self.request.get('sex')
+        discountor.sex = self.request.get('sext')
         discountor.tel = self.request.get('area')+' '+self.request.get('tel')
         discountor.put()
         print discountor+"========================"
