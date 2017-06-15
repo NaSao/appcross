@@ -100,7 +100,7 @@ class Discounting(webapp2.RequestHandler):
     def get(self):
         #save discount info start
         price = self.request.get('price')
-        duuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode'))
+        duuid = str(uuid.uuid1())
         discountorOpenid = self.request.get('discountorOpenid')
         
         discountinfo = DiscountInfo()
