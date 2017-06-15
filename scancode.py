@@ -23,9 +23,9 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 
 # [START main_page]
-class MainPage(webapp2.RequestHandler):
+class MainPagescan(webapp2.RequestHandler):
 
-    def get(self):
+    def post(self):
         duuid = self.request.get('uuid')
         template_values = {
         }
@@ -59,7 +59,7 @@ class QCode(webapp2.RequestHandler):
 
 # [START app]
 app = webapp2.WSGIApplication([
-    ('/qcode/', MainPage),
+    ('/qcode/', MainPagescan),
     ('/qcodei', QCode),
 ], debug=True)
 # [END app]
