@@ -112,7 +112,10 @@ class Discounting(webapp2.RequestHandler):
         discountinfo.put()
         #save discount info end
         url = QRCode_generator(duuid)
-        self.response.out.write('<div><img src="'+url+'"></img></div>')
+                
+        self.response.out.write("<html><body>")
+        self.response.out.write('<div style="width:600px;margin-left:auto;margin-right:auto;"><img height="200" width="200" src="'+url+'"></img></div>')
+        self.response.out.write("</body></html>")
     
 # [END Discounting]
 
