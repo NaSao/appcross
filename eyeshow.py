@@ -91,7 +91,6 @@ class Register(webapp2.RequestHandler):
         discountor.sex = self.request.get('sext')
         discountor.tel = self.request.get('area')+' '+self.request.get('tel')
         discountor.put()
-        print discountor
         template_values = {
             'discountorOpenid': discountorOpenid
         }
