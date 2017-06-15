@@ -20,11 +20,6 @@
       $axure.utils.getOtherPath = function() { return 'register/resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'register/resources/reload.html'; };
     </script>
-    <script>   
-	  function formSubmit(){     
-	    document.price.submit();
-	  }   
-  	</script>
   </head>
   <body>
     <div id="base" class="">
@@ -132,14 +127,12 @@
 
       <!-- Unnamed (Rectangle) -->
       <div id="u19" class="ax_default box_1">
-        <img id="u19_img" class="img " src="register/images/home/u19.png" onclick="formSubmit();"/>
+        <img id="u19_img" class="img " src="register/images/home/u19.png" onClick="document.price.submit()"/>
         <!-- Unnamed () -->
         <div id="u20" class="text">
           <p><span>立即享受最优折扣</span></p><p><span>REGISTER</span></p>
         </div>
-       
       </div>
-      <input class="img" type="image" src="register/images/home/u19.png" value="立即享受最优折扣" />
       </form>
     </div>
   </body>
