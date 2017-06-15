@@ -45,6 +45,7 @@ class Discountor(ndb.Model):
     email = ndb.StringProperty(indexed=False)
     sex = ndb.StringProperty(indexed=False)
     tel = ndb.StringProperty(indexed=False)
+    date = ndb.DateTimeProperty(auto_now_add=True)
     
 class DiscountInfo(ndb.Model):
     duuid = ndb.StringProperty(indexed=True)
@@ -90,6 +91,7 @@ class Register(webapp2.RequestHandler):
         discountor.sex = self.request.get('sex')
         discountor.tel = self.request.get('area')+' '+self.request.get('tel')
         discountor.put()
+        print discountor+"========================"
         template_values = {
             'discountorOpenid': discountorOpenid
         }
@@ -106,6 +108,7 @@ class Discounting(webapp2.RequestHandler):
         price = self.request.get('price')
 #         uuid = uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode')
         discountorOpenid = self.request.get('discountorOpenid')
+        print discountorOpenid+"++++++++++++++++++"
         discountinfo = DiscountInfo()
 #         discountinfo.uuid=uuid
         discountinfo.discountor=discountorOpenid
@@ -115,41 +118,7 @@ class Discounting(webapp2.RequestHandler):
         
         
         #show qrcode start
-#         qr = qrcode.QRCode(
-#             version = 1,
-#             error_correction = qrcode.constants.ERROR_CORRECT_L,     
-#             box_size = 10,     
-#             border = 4,
-#     
-#         )
-#         
-#         data = url_add_params(url, uuid)
-# 
-#         qr.add_data(data) 
-#         qr.make(fit=True)  
-#         img = qr.make_image()
-#         img = img.convert("RGBA")
-#         icon = Image.open("icon1.png")
-#         img_w, img_h = img.size
-#         factor = 4
-#         size_w = int(img_w / factor)
-#         size_h = int(img_h / factor)
-# 
-#         icon_w, icon_h = icon.size
-#         if icon_w > size_w:
-#             icon_w = size_w
-#         if icon_h > size_h:
-#             icon_h = size_h
-#         icon = icon.resize((icon_w, icon_h), Image.ANTIALIAS)
-# 
-#         w = int((img_w - icon_w) / 2)
-#         h = int((img_h - icon_h) / 2)
-#         img.paste(icon, (w, h), icon)
-#         photo = images.Image(img.full_size_image)
-#         thumbnail = photo.execute_transforms(output_encoding=images.JPEG)
-#         self.response.headers['Content-Type'] = 'image/jpeg'
-#         self.response.out.write(thumbnail)
-#         return
+
         #show qrcode end
     
 # [END Discounting]
