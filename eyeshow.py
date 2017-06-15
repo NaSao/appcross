@@ -4,11 +4,12 @@ import urllib
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
+from google.appengine.api import urlfetch
 
 import jinja2
 import webapp2
 import uuid
-from google.appengine.api import images
+
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -111,10 +112,11 @@ class Discounting(webapp2.RequestHandler):
         discountinfo.put()
         #save discount info end
         url = QRCode_generator(duuid)
-       
-        self.response.out.write("<html><body>")
-        self.response.out.write("<p>"+url+"</p>")
-        self.response.out.write("</body></html>")
+        result = urlfetch.fetch(url)
+        if result.status_code == 200:
+            self.response.write(result.content)
+        else:
+            self.response.status_code = result.status_code
     
 # [END Discounting]
 
