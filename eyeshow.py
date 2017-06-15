@@ -8,10 +8,8 @@ from google.appengine.ext import ndb
 
 import jinja2
 import webapp2
-#from PIL import Image
-# import qrcode
 import uuid
-# import urlparse
+import qrcode
 from google.appengine.api import images
 
 
