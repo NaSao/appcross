@@ -24,7 +24,8 @@
   </head>
   <body>
     <div id="base" class="">
-
+	  <form action="discount" method="get" name="discount">
+	  <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
       <!-- crossmode (Image) -->
       <div id="u0" class="ax_default image" data-label="crossmode">
         <img id="u0_img" class="img " src="price/images/home/crossmode_u0.jpg"/>
@@ -33,7 +34,7 @@
           <p><span></span></p>
         </div>
       </div>
-
+		
       <!-- eyeshow (Image) -->
       <div id="u2" class="ax_default image" data-label="eyeshow">
         <img id="u2_img" class="img " src="price/images/home/eyeshow_u2.png"/>
@@ -91,13 +92,13 @@
 
         <!-- 姓名 (Text Field) -->
         <div id="u12" class="ax_default text_field" data-label="姓名">
-          <input id="u12_input" type="number" value=""/>
+          <input id="u12_input" type="number" value="" name="price"/>
         </div>
         
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u13" class="ax_default box_1">
+      <div id="u13" class="ax_default box_1" onClick="document.discount.submit()">
         <img id="u13_img" class="img " src="price/images/home/u13.png"/>
         <!-- Unnamed () -->
         <div id="u14" class="text">
@@ -109,6 +110,7 @@
       <div id="u15" class="ax_default text_field">
         <input id="u15_input" type="text" value="€"/>
       </div>
+      </form>
     </div>
   </body>
 </html>

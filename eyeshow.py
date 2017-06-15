@@ -22,20 +22,13 @@ DISCOUNTOR_INFO = 'discountor_info'
 DISCOUNT_LOG = 'discount_log'
 url = 'https://mystical-healer-168312.appspot.com/'
 
-# We set a parent key on the 'Greetings' to ensure that they are all
-# in the same entity group. Queries across the single entity group
-# will be consistent. However, the write rate should be limited to
-# ~1/second.
 
 
-# def url_add_params(url, **params):
-#     '''add new params to web url'''
-#     pr = urlparse.urlparse(url)
-#     query = dict(urlparse.parse_qsl(pr.query))
-#     query.update(params)
-#     prlist = list(pr)
-#     prlist[4] = urllib.urlencode(query)
-#     return urlparse.ParseResult(*prlist).geturl()
+def QRCode_generator(uuid):
+        width = 200
+        length = 200   
+        data = url+'?uuid='+ uuid
+        return 'http://chart.apis.google.com/chart?cht=qr'+'&chs='+ str(width)+'x' + str(length) + '&chl='+ data
 
 
 # [START discount]
@@ -51,6 +44,7 @@ class DiscountInfo(ndb.Model):
     duuid = ndb.StringProperty(indexed=True)
     discountor = ndb.StructuredProperty(Discountor)
     originalPrice = ndb.StringProperty(indexed=False)
+    state = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
 # [END discount]
 
@@ -105,20 +99,22 @@ class Discounting(webapp2.RequestHandler):
     def get(self):
         #save discount info start
         price = self.request.get('price')
-#         uuid = uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode')
+        uuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, 'crossmode'))
         discountorOpenid = self.request.get('discountorOpenid')
-        print discountorOpenid+"++++++++++++++++++"
+        
         discountinfo = DiscountInfo()
-#         discountinfo.uuid=uuid
+        discountinfo.uuid=uuid
         discountinfo.discountor=discountorOpenid
         discountinfo.originalPrice=price
-#         discountinfo.put()
+        #0 is not used,1 is used
+        discountinfo.state="0"
+        discountinfo.put()
         #save discount info end
-        
-        
-        #show qrcode start
-
-        #show qrcode end
+        url = QRCode_generator(uuid)
+       
+        self.response.out.write("<html><body>")
+        self.response.out.write("<p>"+url+"</p>")
+        self.response.out.write("</body></html>")
     
 # [END Discounting]
 
