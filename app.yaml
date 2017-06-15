@@ -21,7 +21,7 @@ handlers:
   script: eyeshow.app
 
 - url: /qcode/.*
-  script: scan/scancode.app
+  script: scancode.app
   
 # [END handlers]
 
