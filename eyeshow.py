@@ -10,7 +10,7 @@ import jinja2
 import webapp2
 #from PIL import Image
 # import qrcode
-# import uuid
+import uuid
 # import urlparse
 from google.appengine.api import images
 
