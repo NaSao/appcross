@@ -17,7 +17,7 @@ handlers:
 - url: /price
   static_dir: price
   
-- url: /¡£*
+- url: /.*
   script: eyeshow.app
 
 - url: /qcode/.*
