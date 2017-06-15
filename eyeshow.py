@@ -12,7 +12,6 @@ from google.appengine.ext import ndb
 import jinja2
 import webapp2
 import uuid
-import qrcode
 from google.appengine.api import images
 
 
