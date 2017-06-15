@@ -68,11 +68,12 @@ class MainPage(webapp2.RequestHandler):
              'discountorOpenid': discountorOpenid
         }
         discountorX = Discountor.query(Discountor.openid==discountorOpenid)
+        
         if discountorX is None:
-            template = JINJA_ENVIRONMENT.get_template('price.html')
+            template = JINJA_ENVIRONMENT.get_template('register.html')
             self.response.write(template.render(template_values))
         else:
-            template = JINJA_ENVIRONMENT.get_template('register.html')
+            template = JINJA_ENVIRONMENT.get_template('price.html')
             self.response.write(template.render(template_values))
         
 # [END main_page]
