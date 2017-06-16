@@ -90,7 +90,7 @@ class Login(webapp2.RequestHandler):
         discountorX = Discountor.query(ndb.AND(Discountor.email==email,Discountor.password==password))
         if not discountorX.get():
                 template_values = {
-                 'message': "用户名或者密码不正确！"
+                 'message': '用户名或者密码不正确！'
                 }
                 template = JINJA_ENVIRONMENT.get_template('login.html')
                 self.response.write(template.render(template_values))
@@ -131,7 +131,7 @@ class Register(webapp2.RequestHandler):
             self.response.write(template.render(template_values))
         else:
             template_values = {
-                 'message': "该邮箱已被使用！"
+                 'message': '该邮箱已被使用！'
                 }
             template = JINJA_ENVIRONMENT.get_template('register.html')
             self.response.write(template.render(template_values))
