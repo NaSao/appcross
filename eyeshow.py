@@ -35,6 +35,7 @@ def QRCode_generator(duuid):
 # [START discount]
 class Discountor(ndb.Model):
     openid = ndb.StringProperty(indexed=True)
+    password = ndb.StringProperty(indexed=False)
     name = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
     sex = ndb.StringProperty(indexed=False)
@@ -56,27 +57,11 @@ class MainPage(webapp2.RequestHandler):
 
     def get(self):
         duuid = self.request.get('uuid')
-        user = users.get_current_user()
-        email = user.email()
-        discountorOpenid = email
         if duuid=="":
-            template_values = {
-             'discountorOpenid': discountorOpenid
-            }
-            discountorX = Discountor.query(Discountor.openid==discountorOpenid)
-            
-            if not discountorX.get():
-                template = JINJA_ENVIRONMENT.get_template('register.html')
-                self.response.write(template.render(template_values))
-            else:
-                template = JINJA_ENVIRONMENT.get_template('price.html')
-                self.response.write(template.render(template_values))
-        elif discountorOpenid=="" and duuid=="":
             template_values = {}
-            template = JINJA_ENVIRONMENT.get_template('failpage.html')
+            template = JINJA_ENVIRONMENT.get_template('login.html')
             self.response.write(template.render(template_values))
         else:
-            
             discountinfoX = DiscountInfo.query(ndb.AND(DiscountInfo.duuid==duuid,DiscountInfo.state=='0'))
             if not discountinfoX.get():
                 template_values = {}
@@ -97,25 +82,59 @@ class MainPage(webapp2.RequestHandler):
         
 # [END main_page]
 
+# [START Login]
+class Login(webapp2.RequestHandler):
+    def post(self):
+        email = self.request.get('email')
+        password = self.request.get('password')
+        discountorX = Discountor.query(ndb.AND(Discountor.email==email,Discountor.password==password))
+        if not discountorX.get():
+                template_values = {
+                 'message': "用户名或者密码不正确！"
+                }
+                template = JINJA_ENVIRONMENT.get_template('login.html')
+                self.response.write(template.render(template_values))
+        else:
+                template_values = {
+                 'discountorOpenid': email
+                }
+                template = JINJA_ENVIRONMENT.get_template('price.html')
+                self.response.write(template.render(template_values))
+# [END Login]
+
+class PreRegister(webapp2.RequestHandler):
+    def post(self):
+        template_values = {}
+        template = JINJA_ENVIRONMENT.get_template('register.html')
+        self.response.write(template.render(template_values))
 
 # [START Register]
 class Register(webapp2.RequestHandler):
 
     def post(self):
-        discountorOpenid = self.request.get('discountorOpenid')
+        email = self.request.get('email')
         discountor = Discountor()
-        discountor.openid = discountorOpenid
+        discountor.openid = email
         discountor.name = self.request.get('name')
         discountor.email = self.request.get('email')
         discountor.sex = self.request.get('sext')
+        discountor.password = self.request.get('password')
         discountor.tel = self.request.get('area')+' '+self.request.get('tel')
-        discountor.put()
-        template_values = {
-            'discountorOpenid': discountorOpenid
-        }
-
-        template = JINJA_ENVIRONMENT.get_template('price.html')
-        self.response.write(template.render(template_values))
+        discountorX = Discountor.query(ndb.AND(Discountor.email==email))
+        if not discountorX.get():
+            discountor.put()
+            template_values = {
+                'discountorOpenid': email
+            }
+    
+            template = JINJA_ENVIRONMENT.get_template('price.html')
+            self.response.write(template.render(template_values))
+        else:
+            template_values = {
+                 'message': "该邮箱已被使用！"
+                }
+            template = JINJA_ENVIRONMENT.get_template('register.html')
+            self.response.write(template.render(template_values))
 # [END Register]
 
 # [START Discounting]
@@ -165,6 +184,8 @@ class QCode(webapp2.RequestHandler):
 # [START app]
 app = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/login',Login),
+    ('/register',PreRegister),
     ('/price', Register),
     ('/discount', Discounting),
 ], debug=True)
