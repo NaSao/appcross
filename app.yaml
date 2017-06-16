@@ -18,7 +18,7 @@ handlers:
   static_dir: price
   
 - url: /qcode/.*
-  script: scancode.app
+  script: \scancode.app
   
 - url: /.*
   script: eyeshow.app
