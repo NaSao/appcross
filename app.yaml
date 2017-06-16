@@ -23,6 +23,9 @@ handlers:
 - url: /eyeshowpage
   static_dir: eyeshowpage
   
+- url: /login
+  static_dir: login
+  
 - url: /price
   static_dir: price
   
