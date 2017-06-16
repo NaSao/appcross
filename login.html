@@ -24,7 +24,7 @@
         $('#u0').hide(); 
 	    $('#u18').hide();
 		$('#u31').hide();
-
+		
 		  
         $('#u16').click(function(event){
 		
@@ -55,7 +55,7 @@
 		
 		});
 		
-        var message = {{ message }};
+        var message = $("#message").value;
         alert(message);
 		if(message == "no"){
 			$('#u31').show();
@@ -68,6 +68,7 @@
   </head>
   <body>
     <div id="base" class="">
+    <input type="hidden" name="message" value="{{ message }}" id="message">
 	  <form  action="login" method="post" name="login" id="login">
       <!-- 邮箱不能为空 (Rectangle) -->
       <div id="u0" class="ax_default box_1" data-label="邮箱不能为空">
