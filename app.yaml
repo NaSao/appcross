@@ -13,12 +13,19 @@ handlers:
   
 - url: /register
   static_dir: register
+ 
+- url: /failpage
+  static_dir: failpage
+
+- url: /customerpage
+  static_dir: customerpage
   
 - url: /price
   static_dir: price
   
 - url: /.*
   script: eyeshow.app
+  login: required
 
 
   
