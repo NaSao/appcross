@@ -33,7 +33,8 @@
 		//alert(data);
 		if(data == "姓名（拼音）：Zhang San") {  
 			$('#u4').show();  
-			event.preventDefault();  
+			event.preventDefault();
+			return;
 		} else {  
 			$('#u4').hide();  
 		} 
@@ -43,7 +44,8 @@
 		//alert(data);
 		if(data1 == "E-mail") {  
 			$('#u2').show();  
-			event.preventDefault();  
+			event.preventDefault();
+			return;
 		} else {  
 			$('#u2').hide();  
 		} 
@@ -54,10 +56,12 @@
 	    //alert(data);
         if(data2 == "电话（Tel）") {  
             $('#u0').show();  
-            event.preventDefault();  
+            event.preventDefault();
+            return;
         } else if(!z.test(data2)){
            $('#u50').show();  
            event.preventDefault();
+           return;
         } else {  
             $('#u0').hide();  
 			$('#u50').hide();  
