@@ -62,19 +62,17 @@
             $('#u0').hide();  
 			$('#u50').hide();  
         }
-				
-	    
         
-			
+        $('#price').submit();
+
         });
 
-		 
        });
     </script>
   </head>
   <body>
     <div id="base" class="">
-	 <form action="price" method="post" name="price">
+	 <form action="price" method="post" name="price" id="price">
 	  <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
 	  
       <!-- 电话不能为空 (Rectangle) -->
@@ -383,7 +381,7 @@
       </div>
 
       <!-- 提交按钮 (Rectangle) -->
-      <div id="u52" class="ax_default box_1" data-label="提交按钮" onClick="document.price.submit()">
+      <div id="u52" class="ax_default box_1" data-label="提交按钮" >
         <img id="u52_img" class="img " src="register/images/home/提交按钮_u52.png"/>
         <!-- Unnamed () -->
         <div id="u53" class="text">
