@@ -79,8 +79,8 @@ class MainPage(webapp2.RequestHandler):
                 self.response.write(template.render(template_values))
             else:
                 for dis in discountinfoX:
-                    key = dis.key()
-                    discountinfo = DiscountInfo.get(key)
+                    akey = dis.key()
+                    discountinfo = DiscountInfo.get(akey)
                     discountinfo.state="1"
                     discountinfo.put()
                     
