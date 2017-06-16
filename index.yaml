@@ -2,5 +2,17 @@ indexes:
 - kind: Discountor
   ancestor: yes
   properties:
+  - name: openid
+  - name: name
+  - name: email
+  - name: sex
+  - name: tel
   - name: date
-    direction: desc
+ 
+- kind: DiscountInfo
+  properties:
+  - name: duuid
+  - name: openid
+  - name: originalPrice
+  - name: state
+  - name: date
