@@ -114,19 +114,19 @@ class PreRegister(webapp2.RequestHandler):
 class Register(webapp2.RequestHandler):
 
     def post(self):
-        email = self.request.get('email')
+        semail = self.request.get('email')
         discountor = Discountor()
-        discountor.openid = email
+        discountor.openid = semail
         discountor.name = self.request.get('name')
-        discountor.email = self.request.get('email')
+        discountor.email = semail
         discountor.sex = self.request.get('sext')
         discountor.password = self.request.get('password')
         discountor.tel = self.request.get('area')+' '+self.request.get('tel')
-        discountorX = Discountor.query(Discountor.email==email)
+        discountorX = Discountor.query(Discountor.email==semail)
         if not discountorX.get():
             discountor.put()
             template_values = {
-                'discountorOpenid': email
+                'discountorOpenid': semail
             }
     
             template = JINJA_ENVIRONMENT.get_template('price.html')
