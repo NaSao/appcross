@@ -118,7 +118,7 @@ class Register(webapp2.RequestHandler):
 # [START Discounting]
 class Discounting(webapp2.RequestHandler):
 
-    def get(self):
+    def post(self):
         #save discount info start
         price = self.request.get('price')
         duuid = str(uuid.uuid1())
@@ -163,6 +163,6 @@ class QCode(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/price', Register),
-    ('/discounting', Discounting)
+    ('/discounting', Discounting),
 ], debug=True)
 # [END app]
