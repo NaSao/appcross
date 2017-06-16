@@ -35,7 +35,7 @@ def QRCode_generator(duuid):
 # [START discount]
 class Discountor(ndb.Model):
     openid = ndb.StringProperty(indexed=True)
-    password = ndb.StringProperty(indexed=False)
+    password = ndb.StringProperty(indexed=True)
     name = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
     sex = ndb.StringProperty(indexed=False)
@@ -87,7 +87,7 @@ class Login(webapp2.RequestHandler):
     def post(self):
         email = self.request.get('email')
         password = self.request.get('password')
-        discountorX = Discountor.query(ndb.AND(Discountor.email==email,Discountor.password==password))
+        discountorX = Discountor.query(ndb.AND(Discountor.openid==email,Discountor.password==password))
         
         if not discountorX.get():
                 message = 'no'
