@@ -57,7 +57,8 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         duuid = self.request.get('uuid')
         discountorOpenid = self.request.get('openid')
-        
+        print duuid + "---------------"
+        print discountorOpenid + "---------------"
         if discountorOpenid is None and duuid is not None:
             template_values = {
              'discountorOpenid': discountorOpenid
