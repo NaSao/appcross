@@ -88,8 +88,7 @@ class Login(webapp2.RequestHandler):
         email = self.request.get('email')
         password = self.request.get('password')
         discountorX = Discountor.query(ndb.AND(Discountor.openid==email,Discountor.password==password))
-        print email+"------------------"
-        print password+"------------------"
+        print discountorX
         if not discountorX.get():
                 message = 'no'
                 template_values = {
