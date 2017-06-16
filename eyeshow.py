@@ -76,25 +76,23 @@ class MainPage(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('failpage.html')
             self.response.write(template.render(template_values))
         else:
-            template_values = {
-             'uuid' : duuid
-             }
+            
             discountinfoX = DiscountInfo.query(ndb.AND(DiscountInfo.duuid==duuid,DiscountInfo.state=='0'))
             if not discountinfoX.get():
+                template_values = {}
                 template = JINJA_ENVIRONMENT.get_template('failpage.html')
                 self.response.write(template.render(template_values))
             else:
+                price = 0
                 for dis in discountinfoX:
                     dis.state="1"
                     dis.put()
-                    
-                template = JINJA_ENVIRONMENT.get_template('customerpage.html')
+                    price = float(dis.originalPrice)*0.88
+                template_values = {
+                 'price' : price
+                }   
+                template = JINJA_ENVIRONMENT.get_template('eyeshowpage.html')
                 self.response.write(template.render(template_values))
-        
-        
-
-#         template = JINJA_ENVIRONMENT.get_template('register.html')
-#         self.response.write(template.render(template_values))
         
 # [END main_page]
 
