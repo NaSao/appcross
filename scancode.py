@@ -23,7 +23,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 
 # [START main_page]
-class MainPagescan(webapp2.RequestHandler):
+class MainPage(webapp2.RequestHandler):
 
     def post(self):
         duuid = self.request.get('uuid')
@@ -57,7 +57,7 @@ class QCode(webapp2.RequestHandler):
 
 # [START app]
 app = webapp2.WSGIApplication([
-    ('/', MainPagescan),
+    ('/', MainPage),
     ('/qcodei', QCode),
 ], debug=True)
 # [END app]
