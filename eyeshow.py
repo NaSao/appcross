@@ -73,8 +73,19 @@ class MainPage(webapp2.RequestHandler):
             template_values = {
              'uuid' : duuid
              }
-            template = JINJA_ENVIRONMENT.get_template('customerpage.html')
-            self.response.write(template.render(template_values))
+            discountinfoX = DiscountInfo.query(ndb.AND(DiscountInfo.duuid==duuid,DiscountInfo.state=='0'))
+            if not discountinfoX.get():
+                template = JINJA_ENVIRONMENT.get_template('failpage.html')
+                self.response.write(template.render(template_values))
+            else:
+                for dis in discountinfoX:
+                    key = dis.key()
+                    discountinfo = DiscountInfo.get(key)
+                    discountinfo.state="1"
+                    discountinfo.put()
+                    
+                template = JINJA_ENVIRONMENT.get_template('customerpage.html')
+                self.response.write(template.render(template_values))
         
         
 
