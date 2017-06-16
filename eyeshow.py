@@ -122,7 +122,7 @@ class Register(webapp2.RequestHandler):
         discountor.sex = self.request.get('sext')
         discountor.password = self.request.get('password')
         discountor.tel = self.request.get('area')+' '+self.request.get('tel')
-        discountorX = Discountor.query(ndb.AND(Discountor.email==email))
+        discountorX = Discountor.query(Discountor.email==email)
         if not discountorX.get():
             discountor.put()
             template_values = {
