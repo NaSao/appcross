@@ -88,6 +88,7 @@ class MainPage(webapp2.RequestHandler):
                     dis.state="1"
                     dis.put()
                     price = float(dis.originalPrice)*0.88
+                    price = round(price,2)
                 template_values = {
                  'price' : price
                 }   
