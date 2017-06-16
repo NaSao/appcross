@@ -142,7 +142,6 @@ class QCode(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/price', Register),
-    ('/discount', Discounting),
-    ('/qcode', QCode),
+    ('/discount', Discounting)
 ], debug=True)
 # [END app]
