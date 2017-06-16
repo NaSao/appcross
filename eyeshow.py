@@ -69,6 +69,7 @@ class MainPage(webapp2.RequestHandler):
                 template = JINJA_ENVIRONMENT.get_template('register.html')
                 self.response.write(template.render(template_values))
             else:
+                print discountorOpenid+"---------------"
                 template = JINJA_ENVIRONMENT.get_template('failpage.html')
                 self.response.write(template.render(template_values))
         elif discountorOpenid=="" and duuid=="":
