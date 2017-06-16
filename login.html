@@ -23,6 +23,7 @@
 	  
         $('#u0').hide(); 
 	    $('#u18').hide();
+		$('#u31').hide();
 
 		  
         $('#u16').click(function(event){
@@ -32,7 +33,7 @@
 		//alert(data);
 		if(data1 == "E-mail") {  
 			$('#u0').show();  
-			event.preventDefault();
+			event.preventDefault(); 
 			return;
 		} else {  
 			$('#u0').hide();  
@@ -52,7 +53,12 @@
         
 		$('#login').submit();
 		});
-		 
+		var message = {{ message }}
+		if(message == "no"){
+			$('#u31').show();
+		}else{
+			$('#u31').hide();
+		}
        });
     </script>
   </head>
@@ -134,7 +140,7 @@
 
         <!-- 邮件 (Text Field) -->
         <div id="u14" class="ax_default text_field" data-label="邮件">
-          <input id="u14_input" type="email" value="" name="email"/>
+          <input id="u14_input" type="email" value=""/>
         </div>
       </div>
 
@@ -208,29 +214,28 @@
 
         <!-- 第一次密码 (Text Field) -->
         <div id="u28" class="ax_default text_field" data-label="第一次密码">
-          <input id="u28_input" type="text" value="" name="password"/>
+          <input id="u28_input" type="password" value=""/>
         </div>
       </div>
 
-      <!-- message (Rectangle) -->
-      <div id="u29" class="ax_default label" data-label="message">
-        <img id="u29_img" class="img " src="login/images/home/message_u29.png"/>
-        <!-- Unnamed () -->
-        <div id="u30" class="text" style="display:none; visibility: hidden">
-          <p><span>{{ message }}</span></p>
-        </div>
-      </div>
-	  </form>
-	  <form  action="register" method="post" name="register" id="register">
       <!-- 注册按钮 (Rectangle) -->
-      <div id="u31" class="ax_default box_1" data-label="注册按钮" onClick="document.register.submit();">
-        <img id="u31_img" class="img " src="login/images/home/登录按钮_u16.png"/>
+      <div id="u29" class="ax_default box_1" data-label="注册按钮">
+        <img id="u29_img" class="img " src="login/images/home/登录按钮_u16.png"/>
         <!-- Unnamed () -->
-        <div id="u32" class="text">
+        <div id="u30" class="text">
           <p><span>注册REGISTER</span></p>
         </div>
       </div>
-	  </form>
+
+      <!-- 邮箱或密码错误 (Rectangle) -->
+      <div id="u31" class="ax_default box_1" data-label="邮箱或密码错误">
+        <img id="u31_img" class="img " src="login/images/home/邮箱不能为空_u0.png"/>
+        <!-- Unnamed () -->
+        <div id="u32" class="text">
+          <p><span>邮箱或密码错误！！!</span></p>
+        </div>
+      </div>
+      </form>
     </div>
   </body>
 </html>
