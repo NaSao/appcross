@@ -83,10 +83,8 @@ class MainPage(webapp2.RequestHandler):
                 self.response.write(template.render(template_values))
             else:
                 for dis in discountinfoX:
-                    akey = dis.key
-                    discountinfo = DiscountInfo.get(akey)
-                    discountinfo.state="1"
-                    discountinfo.put()
+                    dis.state="1"
+                    dis.put()
                     
                 template = JINJA_ENVIRONMENT.get_template('customerpage.html')
                 self.response.write(template.render(template_values))
