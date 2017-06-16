@@ -88,8 +88,9 @@ class Login(webapp2.RequestHandler):
         email = self.request.get('email')
         password = self.request.get('password')
         discountorX = Discountor.query(ndb.AND(Discountor.email==email,Discountor.password==password))
-        message = '用户名或者密码不正确！'
+        
         if not discountorX.get():
+                message = 'no'
                 template_values = {
                  'message': message
                 }
@@ -131,7 +132,7 @@ class Register(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('price.html')
             self.response.write(template.render(template_values))
         else:
-            message = '该邮箱已被使用！'
+            message = 'no'
             template_values = {
                  'message': message
                 }
