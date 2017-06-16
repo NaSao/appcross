@@ -57,7 +57,7 @@ class QCode(webapp2.RequestHandler):
 
 # [START app]
 app = webapp2.WSGIApplication([
-    ('/qcode', MainPagescan),
+    ('/', MainPagescan),
     ('/qcodei', QCode),
 ], debug=True)
 # [END app]

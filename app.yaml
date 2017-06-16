@@ -17,11 +17,13 @@ handlers:
 - url: /price
   static_dir: price
   
+- url: /qcode/.*
+  script: scancode.app
+  
 - url: /.*
   script: eyeshow.app
 
-- url: /qcode/.*
-  script: scancode.app
+
   
 # [END handlers]
 
