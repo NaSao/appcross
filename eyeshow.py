@@ -43,9 +43,9 @@ class Discountor(ndb.Model):
     
 class DiscountInfo(ndb.Model):
     duuid = ndb.StringProperty(indexed=True)
-    openid = ndb.StringProperty(indexed=False)
+    openid = ndb.StringProperty(indexed=True)
     originalPrice = ndb.StringProperty(indexed=False)
-    state = ndb.StringProperty(indexed=False)
+    state = ndb.StringProperty(indexed=True)
     date = ndb.DateTimeProperty(auto_now_add=True)
 # [END discount]
 
