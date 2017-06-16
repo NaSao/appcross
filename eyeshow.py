@@ -21,7 +21,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
 DISCOUNTOR_INFO = 'discountor_info'
 DISCOUNT_LOG = 'discount_log'
-url = 'https://mystical-healer-168312.appspot.com/qcode'
+url = 'https://mystical-healer-168312.appspot.com'
 
 
 
@@ -57,15 +57,13 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         duuid = self.request.get('uuid')
         discountorOpenid = self.request.get('openid')
-        print duuid + "---------------"
-        print discountorOpenid + "---------------"
         if duuid=="":
             template_values = {
              'discountorOpenid': discountorOpenid
             }
             discountorX = Discountor.query(Discountor.openid==discountorOpenid)
             
-            if discountorX is None:
+            if discountorX.has_next():
                 template = JINJA_ENVIRONMENT.get_template('register.html')
                 self.response.write(template.render(template_values))
             else:
