@@ -56,7 +56,9 @@ class MainPage(webapp2.RequestHandler):
 
     def get(self):
         duuid = self.request.get('uuid')
-        discountorOpenid = self.request.get('openid')
+        user = users.get_current_user()
+        email = user.email()
+        discountorOpenid = email
         if duuid=="":
             template_values = {
              'discountorOpenid': discountorOpenid
