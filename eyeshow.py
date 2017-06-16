@@ -37,7 +37,7 @@ class Discountor(ndb.Model):
     openid = ndb.StringProperty(indexed=True)
     password = ndb.StringProperty(indexed=True)
     name = ndb.StringProperty(indexed=False)
-    email = ndb.StringProperty(indexed=False)
+    email = ndb.StringProperty(indexed=True)
     sex = ndb.StringProperty(indexed=False)
     tel = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
@@ -87,8 +87,8 @@ class Login(webapp2.RequestHandler):
     def post(self):
         semail = self.request.get('email')
         password = self.request.get('password')
-        discountorX = Discountor.query(ndb.AND(Discountor.openid==semail,Discountor.password==password))
-        print discountorX.email+"----------------"
+        discountorX = Discountor.query(ndb.AND(Discountor.email==semail,Discountor.password==password))
+        
         if not discountorX.get():
                 message = 'no'
                 template_values = {
