@@ -63,7 +63,7 @@ class MainPage(webapp2.RequestHandler):
             }
             discountorX = Discountor.query(Discountor.openid==discountorOpenid)
             
-            if discountorX.has_next():
+            if not discountorX.get():
                 template = JINJA_ENVIRONMENT.get_template('register.html')
                 self.response.write(template.render(template_values))
             else:
