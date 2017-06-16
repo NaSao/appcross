@@ -17,7 +17,7 @@ handlers:
 - url: /price
   static_dir: price
   
-- url: /qcode/.*
+- url: /qcode
   script: \scan.scancode.app
   login: admin
   
