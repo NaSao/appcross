@@ -20,7 +20,7 @@ handlers:
 - url: /qcode\.html
   script: scancode.application
   
-- url: /.*
+- url: /index\.html
   script: eyeshow.app
 
 
