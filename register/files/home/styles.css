@@ -3,7 +3,7 @@
   background-image:none;
   position:static;
   left:auto;
-  width:827px;
+  width:817px;
   margin-left:0;
   margin-right:0;
   text-align:left;
@@ -1379,16 +1379,16 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:180px;
-  height:34px;
+  width:170px;
+  height:58px;
 }
 #u78 {
   border-width:0px;
   position:absolute;
   left:648px;
-  top:447px;
-  width:179px;
-  height:33px;
+  top:435px;
+  width:169px;
+  height:57px;
   font-family:'华文仿宋';
   font-weight:410;
   font-style:normal;
@@ -1397,9 +1397,8 @@
 #u79 {
   border-width:0px;
   position:absolute;
-  left:0px;
-  top:0px;
-  width:179px;
-  visibility:hidden;
+  left:2px;
+  top:15px;
+  width:165px;
   word-wrap:break-word;
 }

@@ -28,6 +28,7 @@
 		$('#u54').hide();
 		$('#u65').hide();
 		$('#u76').hide();
+		$('#u78').hide();
 		  
         $('#u52').click(function(event){ 
 		  
@@ -36,7 +37,7 @@
 		//alert(data);
 		if(data == "姓名（拼音）：Zhang San") {  
 			$('#u4').show();  
-			event.preventDefault();
+			event.preventDefault(); 
 			return;
 		} else {  
 			$('#u4').hide();  
@@ -59,7 +60,7 @@
 	    //alert(data);
         if(data2 == "电话（Tel）") {  
             $('#u0').show();  
-            event.preventDefault(); 
+            event.preventDefault();
             return;
         } else if(!z.test(data2)){
            $('#u50').show();  
@@ -75,7 +76,7 @@
 		//alert(data3);
 		if(data3 == "请输入密码password") {  
 			$('#u54').show();  
-			event.preventDefault(); 
+			event.preventDefault();
 			return;
 		} else {  
 			$('#u54').hide();  
@@ -99,14 +100,21 @@
 		
 		$('#price').submit();
         });
-		
+		var message = $("#message").val();
+        
+		if(message == "no"){
+			$('#u78').show();
+		}else{
+			$('#u78').hide();
+		}
 		 
        });
     </script>
   </head>
   <body>
     <div id="base" class="">
-	 <form  action="price" method="post" name="price" id="price">
+    <input type="hidden" name="message" value="{{ message }}" id="message">
+	 <form action="price" method="post" name="price" id="price">
 	 <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
       <!-- 电话不能为空 (Rectangle) -->
       <div id="u0" class="ax_default box_1" data-label="电话不能为空">
@@ -553,12 +561,12 @@
         </div>
       </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u78" class="ax_default label">
-        <img id="u78_img" class="img " src="register/images/home/u78.png"/>
+      <!-- 该邮箱已被注册 (Rectangle) -->
+      <div id="u78" class="ax_default box_1" data-label="该邮箱已被注册">
+        <img id="u78_img" class="img " src="register/images/home/密码不一致_u76.png"/>
         <!-- Unnamed () -->
-        <div id="u79" class="text" style="display:none; visibility: hidden">
-          <p><span></span></p>
+        <div id="u79" class="text">
+          <p><span>该邮箱已被注册</span></p>
         </div>
       </div>
 	 </form>
