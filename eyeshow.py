@@ -69,7 +69,7 @@ class MainPage(webapp2.RequestHandler):
             else:
                 template = JINJA_ENVIRONMENT.get_template('failpage.html')
                 self.response.write(template.render(template_values))
-        elif discountorOpenid=="":
+        elif discountorOpenid=="" and duuid=="":
             template_values = {}
             template = JINJA_ENVIRONMENT.get_template('price.html')
             self.response.write(template.render(template_values))
