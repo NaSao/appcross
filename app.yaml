@@ -19,6 +19,9 @@ handlers:
 
 - url: /customerpage
   static_dir: customerpage
+
+- url: /eyeshowpage
+  static_dir: eyeshowpage
   
 - url: /price
   static_dir: price
