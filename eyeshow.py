@@ -67,8 +67,12 @@ class MainPage(webapp2.RequestHandler):
                 template = JINJA_ENVIRONMENT.get_template('register.html')
                 self.response.write(template.render(template_values))
             else:
-                template = JINJA_ENVIRONMENT.get_template('price.html')
+                template = JINJA_ENVIRONMENT.get_template('failpage.html')
                 self.response.write(template.render(template_values))
+        elif discountorOpenid=="":
+            template_values = {}
+            template = JINJA_ENVIRONMENT.get_template('price.html')
+            self.response.write(template.render(template_values))
         else:
             template_values = {
              'uuid' : duuid
@@ -79,7 +83,7 @@ class MainPage(webapp2.RequestHandler):
                 self.response.write(template.render(template_values))
             else:
                 for dis in discountinfoX:
-                    akey = dis.key()
+                    akey = dis.key
                     discountinfo = DiscountInfo.get(akey)
                     discountinfo.state="1"
                     discountinfo.put()
