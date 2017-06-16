@@ -85,10 +85,10 @@ class MainPage(webapp2.RequestHandler):
 # [START Login]
 class Login(webapp2.RequestHandler):
     def post(self):
-        email = self.request.get('email')
+        semail = self.request.get('email')
         password = self.request.get('password')
-        discountorX = Discountor.query(ndb.AND(Discountor.openid==email,Discountor.password==password))
-        print discountorX
+        discountorX = Discountor.query(ndb.AND(Discountor.openid==semail,Discountor.password==password))
+        print discountorX.email+"----------------"
         if not discountorX.get():
                 message = 'no'
                 template_values = {
@@ -98,7 +98,7 @@ class Login(webapp2.RequestHandler):
                 self.response.write(template.render(template_values))
         else:
                 template_values = {
-                 'discountorOpenid': email
+                 'discountorOpenid': semail
                 }
                 template = JINJA_ENVIRONMENT.get_template('price.html')
                 self.response.write(template.render(template_values))
