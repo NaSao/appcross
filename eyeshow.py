@@ -55,18 +55,29 @@ class DiscountInfo(ndb.Model):
 class MainPage(webapp2.RequestHandler):
 
     def get(self):
-        discountorOpenid = '1234456'
-        template_values = {
-             'discountorOpenid': discountorOpenid
-        }
-        discountorX = Discountor.query(Discountor.openid==discountorOpenid)
+        duuid = self.request.get('uuid')
+        discountorOpenid = self.request.get('openid')
         
-        if discountorX is None:
-            template = JINJA_ENVIRONMENT.get_template('register.html')
-            self.response.write(template.render(template_values))
+        if discountorOpenid is None and duuid is not None:
+            template_values = {
+             'discountorOpenid': discountorOpenid
+            }
+            discountorX = Discountor.query(Discountor.openid==discountorOpenid)
+            
+            if discountorX is None:
+                template = JINJA_ENVIRONMENT.get_template('register.html')
+                self.response.write(template.render(template_values))
+            else:
+                template = JINJA_ENVIRONMENT.get_template('price.html')
+                self.response.write(template.render(template_values))
         else:
-            template = JINJA_ENVIRONMENT.get_template('price.html')
+            template_values = {
+             'uuid' : duuid
+             }
+            template = JINJA_ENVIRONMENT.get_template('customerpage.html')
             self.response.write(template.render(template_values))
+        
+        
 
 #         template = JINJA_ENVIRONMENT.get_template('register.html')
 #         self.response.write(template.render(template_values))
