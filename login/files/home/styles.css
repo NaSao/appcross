@@ -27,16 +27,15 @@
   top:225px;
   width:210px;
   height:40px;
-  font-family:'华文仿宋';
-  font-weight:410;
+  font-family:'微軟正黑體';
+  font-weight:400;
   font-style:normal;
-  font-size:16px;
 }
 #u1 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:10px;
+  top:12px;
   width:206px;
   word-wrap:break-word;
 }
@@ -264,7 +263,7 @@
   font-family:'华文仿宋';
   font-weight:400;
   font-style:normal;
-  font-size:36px;
+  font-size:28px;
   text-decoration:none;
   color:#000000;
   text-align:left;
@@ -292,10 +291,9 @@
   top:265px;
   width:320px;
   height:50px;
-  font-family:'华文仿宋';
-  font-weight:410;
+  font-family:'微軟正黑體';
+  font-weight:400;
   font-style:normal;
-  font-size:28px;
   color:#FFFFFF;
 }
 #u16_img.mouseDown {
@@ -306,7 +304,7 @@
   border-width:0px;
   position:absolute;
   left:2px;
-  top:7px;
+  top:8px;
   width:316px;
   word-wrap:break-word;
 }
@@ -325,16 +323,15 @@
   top:225px;
   width:210px;
   height:40px;
-  font-family:'华文仿宋';
-  font-weight:410;
+  font-family:'微軟正黑體';
+  font-weight:400;
   font-style:normal;
-  font-size:16px;
 }
 #u19 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:10px;
+  top:12px;
   width:206px;
   word-wrap:break-word;
 }
@@ -512,7 +509,7 @@
   font-family:'华文仿宋';
   font-weight:400;
   font-style:normal;
-  font-size:36px;
+  font-size:28px;
   text-decoration:none;
   color:#000000;
   text-align:left;
@@ -532,10 +529,9 @@
   top:325px;
   width:320px;
   height:50px;
-  font-family:'华文仿宋';
-  font-weight:410;
+  font-family:'微軟正黑體';
+  font-weight:400;
   font-style:normal;
-  font-size:28px;
   color:#FFFFFF;
 }
 #u29_img.mouseDown {
@@ -546,7 +542,7 @@
   border-width:0px;
   position:absolute;
   left:2px;
-  top:7px;
+  top:8px;
   width:316px;
   word-wrap:break-word;
 }
@@ -565,16 +561,15 @@
   top:225px;
   width:210px;
   height:34px;
-  font-family:'华文仿宋';
-  font-weight:410;
+  font-family:'微軟正黑體';
+  font-weight:400;
   font-style:normal;
-  font-size:16px;
 }
 #u32 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:6px;
+  top:9px;
   width:206px;
   word-wrap:break-word;
 }
