@@ -164,10 +164,14 @@ class Discounting(webapp2.RequestHandler):
         discountinfo.put()
         #save discount info end
         codeurl = QRCode_generator(duuid)
-                
-        self.response.out.write("<html><body style='text-align:center;'>")
-        self.response.out.write('<div style="margin-left:auto;margin-right:auto;"><img height="800" width="800" src="'+codeurl+'"></img></div>')
-        self.response.out.write("</body></html>")
+        template_values = {
+                'codeurl': codeurl
+                }
+        template = JINJA_ENVIRONMENT.get_template('qrcode.html')
+        self.response.write(template.render(template_values))
+#         self.response.out.write("<html><body style='text-align:center;'>")
+#         self.response.out.write('<div style="margin-left:auto;margin-right:auto;"><img height="800" width="800" src="'+codeurl+'"></img></div>')
+#         self.response.out.write("</body></html>")
     
 # [END Discounting]
 

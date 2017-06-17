@@ -26,6 +26,9 @@ handlers:
 - url: /login
   static_dir: login
   
+- url: /qrcode
+  static_dir: qrcode
+  
 - url: /price
   static_dir: price
   
