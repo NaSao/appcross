@@ -3,7 +3,7 @@
   background-image:none;
   position:relative;
   left:-21px;
-  width:320px;
+  width:321px;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
@@ -24,19 +24,19 @@
   border-width:0px;
   position:absolute;
   left:77px;
-  top:304px;
+  top:225px;
   width:210px;
   height:40px;
   font-family:'华文仿宋';
   font-weight:410;
   font-style:normal;
-  font-size:20px;
+  font-size:16px;
 }
 #u1 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:6px;
+  top:10px;
   width:206px;
   word-wrap:break-word;
 }
@@ -45,23 +45,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:180px;
-  height:48px;
+  width:145px;
+  height:39px;
 }
 #u2 {
   border-width:0px;
   position:absolute;
-  left:91px;
-  top:537px;
-  width:180px;
-  height:48px;
+  left:110px;
+  top:408px;
+  width:145px;
+  height:39px;
 }
 #u3 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:16px;
-  width:176px;
+  top:12px;
+  width:141px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -70,23 +70,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:180px;
-  height:59px;
+  width:145px;
+  height:39px;
 }
 #u4 {
   border-width:0px;
   position:absolute;
-  left:90px;
+  left:109px;
   top:35px;
-  width:180px;
-  height:59px;
+  width:145px;
+  height:39px;
 }
 #u5 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:22px;
-  width:176px;
+  top:12px;
+  width:141px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -101,10 +101,10 @@
 #u7 {
   border-width:0px;
   position:absolute;
-  left:21px;
-  top:154px;
+  left:22px;
+  top:115px;
   width:321px;
-  height:70px;
+  height:50px;
   overflow:hidden;
 }
 #u7_state0 {
@@ -113,7 +113,7 @@
   left:0px;
   top:0px;
   width:321px;
-  height:70px;
+  height:50px;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
   -ms-overflow-y:hidden;
@@ -159,7 +159,7 @@
   left:0px;
   top:0px;
   width:321px;
-  height:70px;
+  height:50px;
   visibility:hidden;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
@@ -206,7 +206,7 @@
   left:0px;
   top:0px;
   width:321px;
-  height:70px;
+  height:50px;
   visibility:hidden;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
@@ -250,17 +250,17 @@
 #u14 {
   border-width:0px;
   position:absolute;
-  left:22px;
-  top:155px;
+  left:23px;
+  top:116px;
   width:319px;
-  height:69px;
+  height:49px;
 }
 #u14_input {
   position:absolute;
   left:0px;
   top:0px;
   width:319px;
-  height:69px;
+  height:49px;
   font-family:'华文仿宋';
   font-weight:400;
   font-style:normal;
@@ -283,15 +283,15 @@
   left:0px;
   top:0px;
   width:321px;
-  height:71px;
+  height:51px;
 }
 #u16 {
   border-width:0px;
   position:absolute;
-  left:21px;
-  top:354px;
+  left:22px;
+  top:265px;
   width:320px;
-  height:70px;
+  height:50px;
   font-family:'华文仿宋';
   font-weight:410;
   font-style:normal;
@@ -306,7 +306,7 @@
   border-width:0px;
   position:absolute;
   left:2px;
-  top:17px;
+  top:7px;
   width:316px;
   word-wrap:break-word;
 }
@@ -321,20 +321,20 @@
 #u18 {
   border-width:0px;
   position:absolute;
-  left:75px;
-  top:304px;
+  left:77px;
+  top:225px;
   width:210px;
   height:40px;
   font-family:'华文仿宋';
   font-weight:410;
   font-style:normal;
-  font-size:20px;
+  font-size:16px;
 }
 #u19 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:6px;
+  top:10px;
   width:206px;
   word-wrap:break-word;
 }
@@ -349,10 +349,10 @@
 #u21 {
   border-width:0px;
   position:absolute;
-  left:21px;
-  top:234px;
+  left:22px;
+  top:175px;
   width:321px;
-  height:71px;
+  height:51px;
   overflow:hidden;
 }
 #u21_state0 {
@@ -361,7 +361,7 @@
   left:0px;
   top:0px;
   width:321px;
-  height:71px;
+  height:51px;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
   -ms-overflow-y:hidden;
@@ -407,7 +407,7 @@
   left:0px;
   top:0px;
   width:321px;
-  height:71px;
+  height:51px;
   visibility:hidden;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
@@ -454,7 +454,7 @@
   left:0px;
   top:0px;
   width:321px;
-  height:71px;
+  height:51px;
   visibility:hidden;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
@@ -498,17 +498,17 @@
 #u28 {
   border-width:0px;
   position:absolute;
-  left:22px;
-  top:235px;
+  left:23px;
+  top:176px;
   width:319px;
-  height:69px;
+  height:49px;
 }
 #u28_input {
   position:absolute;
   left:0px;
   top:0px;
   width:319px;
-  height:69px;
+  height:49px;
   font-family:'华文仿宋';
   font-weight:400;
   font-style:normal;
@@ -523,15 +523,15 @@
   left:0px;
   top:0px;
   width:321px;
-  height:71px;
+  height:51px;
 }
 #u29 {
   border-width:0px;
   position:absolute;
   left:21px;
-  top:434px;
+  top:325px;
   width:320px;
-  height:70px;
+  height:50px;
   font-family:'华文仿宋';
   font-weight:410;
   font-style:normal;
@@ -546,7 +546,7 @@
   border-width:0px;
   position:absolute;
   left:2px;
-  top:17px;
+  top:7px;
   width:316px;
   word-wrap:break-word;
 }
@@ -556,19 +556,19 @@
   left:0px;
   top:0px;
   width:211px;
-  height:41px;
+  height:35px;
 }
 #u31 {
   border-width:0px;
   position:absolute;
   left:77px;
-  top:304px;
+  top:225px;
   width:210px;
-  height:40px;
+  height:34px;
   font-family:'华文仿宋';
   font-weight:410;
   font-style:normal;
-  font-size:20px;
+  font-size:16px;
 }
 #u32 {
   border-width:0px;
