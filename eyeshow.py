@@ -121,12 +121,18 @@ class Register(webapp2.RequestHandler):
         discountor.email = semail
         discountor.sex = self.request.get('sext')
         discountor.password = self.request.get('password')
-        discountor.tel = self.request.get('area')+' '+self.request.get('tel')
+        tel = self.request.get('tel')
+        area = self.request.get('area')
+        discountor.tel = area+' '+tel
         discountorX = Discountor.query(Discountor.openid==semail)
         if not discountorX.get():
             discountor.put()
             template_values = {
-                'discountorOpenid': semail
+                'discountorOpenid': semail,
+                'email': semail,
+                'name': discountor.name,
+                'tel': tel,
+                'area': area
             }
     
             template = JINJA_ENVIRONMENT.get_template('price.html')

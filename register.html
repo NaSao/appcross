@@ -93,6 +93,8 @@
 			return;
 		} else if (data3 != data4){
 			$('#u76').show();
+			event.preventDefault();
+			return;
 		} else {  
 			$('#u65').hide();
 			$('#u76').hide();
@@ -107,6 +109,12 @@
 		}else{
 			$('#u78').hide();
 		}
+		
+		var area = $("#area").val();
+        
+		if(area != ""){
+			$('#u37_input').val(area);
+		}
 		 
        });
     </script>
@@ -116,6 +124,7 @@
     <input type="hidden" name="message" value="{{ message }}" id="message">
 	 <form action="price" method="post" name="price" id="price">
 	 <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
+	 <input type="hidden" value="{{ area }}" id="selectarea">
       <!-- 电话不能为空 (Rectangle) -->
       <div id="u0" class="ax_default box_1" data-label="电话不能为空">
         <img id="u0_img" class="img " src="register/images/home/电话不能为空_u0.png"/>
@@ -209,7 +218,7 @@
 
         <!-- 姓名 (Text Field) -->
         <div id="u18" class="ax_default text_field" data-label="姓名">
-          <input id="u18_input" type="text" value="" name="name"/>
+          <input id="u18_input" type="text" value="{{ name }}" name="name"/>
         </div>
       </div>
 
@@ -261,7 +270,7 @@
 
         <!-- 邮件 (Text Field) -->
         <div id="u27" class="ax_default text_field" data-label="邮件">
-          <input id="u27_input" type="email" value="" name="email"/>
+          <input id="u27_input" type="email" value="{{ email }}" name="email"/>
         </div>
       </div>
 
@@ -313,13 +322,13 @@
 
         <!-- 姓名 (Text Field) -->
         <div id="u36" class="ax_default text_field" data-label="姓名">
-          <input id="u36_input" type="tel" value="" name="tel"/>
+          <input id="u36_input" type="tel" value="{{ tel }}" name="tel"/>
         </div>
       </div>
 
       <!-- Unnamed (Droplist) -->
       <div id="u37" class="ax_default droplist">
-        <select id="u37_input" name="area">
+        <select id="u37_input" name="area" >
           <option value="+33">+33</option>
           <option value="+86">+86</option>
           <option value="+852">+852</option>

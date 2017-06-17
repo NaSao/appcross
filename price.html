@@ -22,32 +22,33 @@
 	  $(document).ready(function(){  
 	  
 		$('#u0').hide();  
-		$('#u2').hide();
+		$('#u16').hide();
 		  
         $('#u18').click(function(event){ 
 		   
 
-	    var data2 = $('#u16_input').val();  
-		var z= /^[0-9]+\.?[0-9]*$/;
+	    var data2 = $('#u14_input').val();  
+		var z= /^[0-9]+\,?[0-9]*$/;
         data2 = $.trim(data2); 
 	    //alert(data);
         if(data2 == "原价Price") {  
             $('#u0').show();  
-            event.preventDefault(); 
+            event.preventDefault();
             return;
         } else if(!z.test(data2)){
-           $('#u2').show();  
+           $('#u16').show();  
            event.preventDefault();
            return;
         } else {  
             $('#u0').hide();  
-			$('#u2').hide();  
+			$('#u16').hide();  
         }
-        
+				
         $('#discount').submit();
         
+			
         });
-		
+
 		 
        });
     </script>
@@ -65,40 +66,44 @@
         </div>
       </div>
 
-      <!-- 输入数字 (Rectangle) -->
-      <div id="u2" class="ax_default box_1" data-label="输入数字">
-        <img id="u2_img" class="img " src="price/images/home/输入数字_u2.png"/>
+      <!-- crossmode (Image) -->
+      <div id="u2" class="ax_default image" data-label="crossmode">
+        <img id="u2_img" class="img " src="price/images/home/crossmode_u2.jpg"/>
         <!-- Unnamed () -->
-        <div id="u3" class="text">
-          <p style="font-size:20px;"><span>请输入数字</span></p><p style="font-size:16px;"><span style="font-size:20px;"></span><span>（小数点为&quot;.&quot;）</span></p>
+        <div id="u3" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
         </div>
       </div>
 
-      <!-- crossmode (Image) -->
-      <div id="u4" class="ax_default image" data-label="crossmode">
-        <img id="u4_img" class="img " src="price/images/home/crossmode_u4.jpg"/>
+      <!-- eyeshow (Image) -->
+      <div id="u4" class="ax_default image" data-label="eyeshow">
+        <img id="u4_img" class="img " src="price/images/home/eyeshow_u4.png"/>
         <!-- Unnamed () -->
         <div id="u5" class="text" style="display:none; visibility: hidden">
           <p><span></span></p>
         </div>
       </div>
 
-      <!-- eyeshow (Image) -->
-      <div id="u6" class="ax_default image" data-label="eyeshow">
-        <img id="u6_img" class="img " src="price/images/home/eyeshow_u6.png"/>
-        <!-- Unnamed () -->
-        <div id="u7" class="text" style="display:none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
       <!-- 原价price (Group) -->
-      <div id="u8" class="ax_default" data-label="原价price" data-left="363" data-top="398" data-width="276" data-height="73">
+      <div id="u6" class="ax_default" data-label="原件price" data-left="363" data-top="409" data-width="276" data-height="73">
 
         <!-- 边框 (Dynamic Panel) -->
-        <div id="u9" class="ax_default" data-label="边框">
-          <div id="u9_state0" class="panel_state" data-label="普通" style="">
-            <div id="u9_state0_content" class="panel_state_content">
+        <div id="u7" class="ax_default" data-label="边框">
+          <div id="u7_state0" class="panel_state" data-label="普通" style="">
+            <div id="u7_state0_content" class="panel_state_content">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u8" class="ax_default box_1">
+                <img id="u8_img" class="img " src="price/images/home/u8.png"/>
+                <!-- Unnamed () -->
+                <div id="u9" class="text" style="display:none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u7_state1" class="panel_state" data-label="焦点" style="visibility: hidden;">
+            <div id="u7_state1_content" class="panel_state_content">
 
               <!-- Unnamed (Rectangle) -->
               <div id="u10" class="ax_default box_1">
@@ -110,8 +115,8 @@
               </div>
             </div>
           </div>
-          <div id="u9_state1" class="panel_state" data-label="焦点" style="visibility: hidden;">
-            <div id="u9_state1_content" class="panel_state_content">
+          <div id="u7_state2" class="panel_state" data-label="必填" style="visibility: hidden;">
+            <div id="u7_state2_content" class="panel_state_content">
 
               <!-- Unnamed (Rectangle) -->
               <div id="u12" class="ax_default box_1">
@@ -123,34 +128,30 @@
               </div>
             </div>
           </div>
-          <div id="u9_state2" class="panel_state" data-label="必填" style="visibility: hidden;">
-            <div id="u9_state2_content" class="panel_state_content">
-
-              <!-- Unnamed (Rectangle) -->
-              <div id="u14" class="ax_default box_1">
-                <img id="u14_img" class="img " src="price/images/home/u14.png"/>
-                <!-- Unnamed () -->
-                <div id="u15" class="text" style="display:none; visibility: hidden">
-                  <p><span></span></p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- 价格 (Text Field) -->
-        <div id="u16" class="ax_default text_field" data-label="价格">
-          <input id="u16_input" type="tel" value="" name="price"/>
+        <!-- 原价 (Text Field) -->
+        <div id="u14" class="ax_default text_field" data-label="姓名">
+          <input id="u14_input" type="text" value=""/>
         </div>
       </div>
 
       <!-- Unnamed (Group) -->
-      <div id="u17" class="ax_default" data-left="0" data-top="0" data-width="1" data-height="1">
+      <div id="u15" class="ax_default" data-left="0" data-top="0" data-width="1" data-height="1">
       </div>
 
-      <!-- 提交按钮 (Rectangle) -->
-      <div id="u18" class="ax_default box_1" data-label="提交按钮">
-        <img id="u18_img" class="img " src="price/images/home/提交按钮_u18.png"/>
+      <!-- 输入数字 (Rectangle) -->
+      <div id="u16" class="ax_default box_1" data-label="输入数字">
+        <img id="u16_img" class="img " src="price/images/home/输入数字_u16.png"/>
+        <!-- Unnamed () -->
+        <div id="u17" class="text">
+          <p><span>请输入数字</span></p><p><span>（小数点为&quot;,&quot;）</span></p>
+        </div>
+      </div>
+
+      <!-- 打折按钮 (Rectangle) -->
+      <div id="u18" class="ax_default box_1" data-label="打折按钮">
+        <img id="u18_img" class="img " src="price/images/home/打折按钮_u18.png"/>
         <!-- Unnamed () -->
         <div id="u19" class="text">
           <p><span>获取打折二维码</span></p><p><span>QRCODE</span></p>
