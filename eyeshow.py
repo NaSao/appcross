@@ -128,11 +128,7 @@ class Register(webapp2.RequestHandler):
         if not discountorX.get():
             discountor.put()
             template_values = {
-                'discountorOpenid': semail,
-                'email': semail,
-                'name': discountor.name,
-                'tel': tel,
-                'area': area
+                'discountorOpenid': semail                
             }
     
             template = JINJA_ENVIRONMENT.get_template('price.html')
@@ -140,7 +136,11 @@ class Register(webapp2.RequestHandler):
         else:
             message = 'no'
             template_values = {
-                 'message': message
+                'message': message,
+                'email': semail,
+                'name': discountor.name,
+                'tel': tel,
+                'area': area
                 }
             template = JINJA_ENVIRONMENT.get_template('register.html')
             self.response.write(template.render(template_values))
