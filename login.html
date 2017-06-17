@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <title>Login</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -24,13 +24,13 @@
       $(document).ready(function(){  
     	  
         $('#u0').hide(); 
-  	    $('#u18').hide();
-  		$('#u31').hide();
+  	    $('#u16').hide();
+  		$('#u29').hide();
   		
   		  
           $('#u16').click(function(event){
   		
-  		var data1 = $('#u14_input').val();  
+  		var data1 = $('#u12_input').val();  
   		data1 = $.trim(data1); 
   		//alert(data);
   		if(data1 == "E-mail") {  
@@ -42,27 +42,27 @@
   		} 
 
   	    	
-  	    var data2 = $('#u28_input').val();  
+  	    var data2 = $('#u26_input').val();  
   		data2 = $.trim(data2); 
   		//alert(data2);
   		if(data2 == "请输入密码password") {  
-  			$('#u18').show();  
+  			$('#u16').show();  
   			event.preventDefault(); 
   			return;
   		} else {  
-  			$('#u18').hide();  
+  			$('#u16').hide();  
   		} 
           
   		$('#login').submit();
   		
   		});
   		
-          var message = $("#message").val();
+        var message = $("#message").val();
           
   		if(message == "no"){
-  			$('#u31').show();
+  			$('#u29').show();
   		}else{
-  			$('#u31').hide();
+  			$('#u29').hide();
   		}
           
          });
