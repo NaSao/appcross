@@ -24,7 +24,7 @@
   border-width:0px;
   position:absolute;
   left:95px;
-  top:237px;
+  top:238px;
   width:170px;
   height:24px;
   font-family:'微軟正黑體';
@@ -76,7 +76,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:148px;
+  top:149px;
   width:321px;
   height:40px;
   overflow:hidden;
@@ -107,23 +107,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:601px;
-  height:101px;
+  width:321px;
+  height:41px;
 }
 #u6 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:100px;
+  width:320px;
+  height:40px;
 }
 #u7 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:42px;
-  width:596px;
+  top:12px;
+  width:316px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -154,23 +154,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:601px;
-  height:101px;
+  width:321px;
+  height:41px;
 }
 #u8 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:100px;
+  width:320px;
+  height:40px;
 }
 #u9 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:42px;
-  width:596px;
+  top:12px;
+  width:316px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -201,23 +201,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:601px;
-  height:101px;
+  width:321px;
+  height:41px;
 }
 #u10 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:100px;
+  width:320px;
+  height:40px;
 }
 #u11 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:42px;
-  width:596px;
+  top:12px;
+  width:316px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -225,7 +225,7 @@
   border-width:0px;
   position:absolute;
   left:21px;
-  top:149px;
+  top:150px;
   width:319px;
   height:39px;
 }
@@ -263,7 +263,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:261px;
+  top:263px;
   width:320px;
   height:40px;
   font-family:'微軟正黑體';
@@ -295,7 +295,7 @@
   border-width:0px;
   position:absolute;
   left:95px;
-  top:237px;
+  top:238px;
   width:170px;
   height:24px;
   font-family:'微軟正黑體';
@@ -322,7 +322,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:197px;
+  top:198px;
   width:321px;
   height:41px;
   overflow:hidden;
@@ -353,23 +353,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:601px;
-  height:101px;
+  width:321px;
+  height:41px;
 }
 #u20 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:100px;
+  width:320px;
+  height:40px;
 }
 #u21 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:42px;
-  width:596px;
+  top:12px;
+  width:316px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -400,23 +400,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:601px;
-  height:101px;
+  width:321px;
+  height:41px;
 }
 #u22 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:100px;
+  width:320px;
+  height:40px;
 }
 #u23 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:42px;
-  width:596px;
+  top:12px;
+  width:316px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -447,23 +447,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:601px;
-  height:101px;
+  width:321px;
+  height:41px;
 }
 #u24 {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:100px;
+  width:320px;
+  height:40px;
 }
 #u25 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:42px;
-  width:596px;
+  top:12px;
+  width:316px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -471,7 +471,7 @@
   border-width:0px;
   position:absolute;
   left:21px;
-  top:198px;
+  top:199px;
   width:319px;
   height:39px;
 }
@@ -501,7 +501,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:311px;
+  top:312px;
   width:320px;
   height:40px;
   font-family:'微軟正黑體';
@@ -533,7 +533,7 @@
   border-width:0px;
   position:absolute;
   left:95px;
-  top:237px;
+  top:238px;
   width:170px;
   height:24px;
   font-family:'微軟正黑體';
@@ -568,7 +568,8 @@
   border-width:0px;
   position:absolute;
   left:2px;
-  top:24px;
+  top:23px;
   width:116px;
+  visibility:hidden;
   word-wrap:break-word;
 }
