@@ -9,6 +9,7 @@ from google.appengine.ext import ndb
 import jinja2
 import webapp2
 import uuid
+from pyasn1.compat.octets import null
 
 
 
@@ -120,7 +121,7 @@ class Register(webapp2.RequestHandler):
         discountor.name = self.request.get('name')
         discountor.email = semail
         sext = self.request.get('sext')
-        if sext is None:
+        if sext==null:
             discountor.sex = 'man'     
         discountor.password = self.request.get('password')
         tel = self.request.get('tel')
