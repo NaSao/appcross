@@ -33,7 +33,7 @@
   		  
           $('#u78').click(function(event){ 
   		  
-  		var data = $('#u18_input').val();  
+  		var data = $('#u14_input').val();  
   		data = $.trim(data); 
   		//alert(data);
   		if(data == "姓名（拼音）：Zhang San") {  
@@ -44,7 +44,7 @@
   			$('#u4').hide();  
   		} 
 
-  		var data1 = $('#u27_input').val();  
+  		var data1 = $('#u23_input').val();  
   		data1 = $.trim(data1); 
   		//alert(data);
   		if(data1 == "E-mail") {  
@@ -55,7 +55,7 @@
   			$('#u2').hide();  
   		} 
 
-  	    var data2 = $('#u36_input').val();  
+  	    var data2 = $('#u77_input').val();  
   		var z= /^[0-9]*$/;
           data2 = $.trim(data2); 
   	    //alert(data);
@@ -72,7 +72,7 @@
   			$('#u37').hide();  
           }
   				
-  	    var data3 = $('#u64_input').val();  
+  	    var data3 = $('#u49_input').val();  
   		data3 = $.trim(data3); 
   		//alert(data3);
   		if(data3 == "请输入密码password") {  
@@ -85,7 +85,7 @@
           
   			
   			
-  		var data4 = $('#u75_input').val();  
+  		var data4 = $('#u60_input').val();  
   		data4 = $.trim(data4); 
   		//alert(data4);
   		if(data4 == "请再次输入密码password again") {  
@@ -113,7 +113,7 @@
   		var area = $("#area").val();
           
   		if(area != ""){
-  			$('#u29_input').val()=area;
+  			$('#u29_input').val(area);
   		}
   		 
          });
@@ -121,10 +121,10 @@
   </head>
   <body>
     <div id="base" class="">
-	  <input type="hidden" name="message" value="{{ message }}" id="message">
-	  <form action="price" method="post" name="price" id="price">
-	  <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
-	  <input type="hidden" value="{{ area }}" id="selectarea">
+	<input type="hidden" name="message" value="{{ message }}" id="message">
+	 <form action="price" method="post" name="price" id="price">
+	 <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
+	 <input type="hidden" value="{{ area }}" id="selectarea">
       <!-- 电话不能为空 (Rectangle) -->
       <div id="u0" class="ax_default box_1" data-label="电话不能为空">
         <img id="u0_img" class="img " src="register/images/home/电话不能为空_u0.png"/>
@@ -200,7 +200,7 @@
 
         <!-- 姓名 (Text Field) -->
         <div id="u14" class="ax_default text_field" data-label="姓名">
-          <input id="u14_input" type="text" value=""/>
+          <input id="u14_input" type="text" value="{{ name }}" name="name"/>
         </div>
       </div>
 
@@ -252,21 +252,21 @@
 
         <!-- 邮件 (Text Field) -->
         <div id="u23" class="ax_default text_field" data-label="邮件">
-          <input id="u23_input" type="email" value=""/>
+          <input id="u23_input" type="email" value="{{ email }}" name="email"/>
         </div>
       </div>
 
       <!-- 先生 (Dynamic Panel) -->
-      <div id="u24" class="ax_default" data-label="先生">
+      <div id="u24" class="ax_default" data-label="先生" selectiongroup="sex" onClick="document.getElementById('u48_input').value='man'">
         <div id="u24_state0" class="panel_state" data-label="未选中" style="">
           <div id="u24_state0_content" class="panel_state_content">
 
             <!-- Unnamed (Rectangle) -->
-            <div id="u25" class="ax_default box_1" selectiongroup="sex">
-              <img id="u25_img" class="img " src="register/images/home/u25.png"/>
+            <div id="u25" class="ax_default box_1 selected" selectiongroup="sex">
+              <img id="u25_img" class="img " src="register/images/home/u25_selected.png"/>
               <!-- Unnamed () -->
               <div id="u26" class="text">
-                <p><span>先生 MR.</span></p>
+                <p><span>先生 MR</span></p>
               </div>
             </div>
           </div>
@@ -275,11 +275,11 @@
           <div id="u24_state1_content" class="panel_state_content">
 
             <!-- Unnamed (Rectangle) -->
-            <div id="u27" class="ax_default box_1" selectiongroup="sex">
+            <div id="u27" class="ax_default box_1 selected" selectiongroup="sex">
               <img id="u27_img" class="img " src="register/images/home/u25_selected.png"/>
               <!-- Unnamed () -->
               <div id="u28" class="text">
-                <p><span>先生 MR.</span></p>
+                <p><span>先生 MR</span></p>
               </div>
             </div>
           </div>
@@ -313,7 +313,7 @@
       </div>
 
       <!-- 女士 (Dynamic Panel) -->
-      <div id="u30" class="ax_default" data-label="女士">
+      <div id="u30" class="ax_default" data-label="女士" selectiongroup="sex" onClick="document.getElementById('u48_input').value='woman'">
         <div id="u30_state0" class="panel_state" data-label="未选中" style="">
           <div id="u30_state0_content" class="panel_state_content">
 
@@ -322,7 +322,7 @@
               <img id="u31_img" class="img " src="register/images/home/u25.png"/>
               <!-- Unnamed () -->
               <div id="u32" class="text">
-                <p><span>女士 MRS.</span></p>
+                <p><span>女士 MRS</span></p>
               </div>
             </div>
           </div>
@@ -335,7 +335,7 @@
               <img id="u33_img" class="img " src="register/images/home/u25_selected.png"/>
               <!-- Unnamed () -->
               <div id="u34" class="text">
-                <p><span>女士 MRS.</span></p>
+                <p><span>女士 MRS</span></p>
               </div>
             </div>
           </div>
@@ -344,7 +344,7 @@
 
       <!-- sex输入框 (Text Field) -->
       <div id="u35" class="ax_default text_field ax_default_hidden" data-label="sex输入框" style="display:none; visibility: hidden">
-        <input id="u35_input" type="text" value=""/>
+        <input id="u35_input" type="text" value="man" name="sext"/>
       </div>
 
       <!-- Unnamed (Group) -->
@@ -370,7 +370,7 @@
       </div>
 
       <!-- 第一次输入密码 (Group) -->
-      <div id="u41" class="ax_default" data-label="第一次输入密码" data-left="20" data-top="232" data-width="321" data-height="41">
+      <div id="u41" class="ax_default" data-label="第一次输入密码" data-left="20" data-top="282" data-width="321" data-height="41">
 
         <!-- 边框 (Dynamic Panel) -->
         <div id="u42" class="ax_default" data-label="边框">
@@ -417,11 +417,11 @@
 
         <!-- 第一次密码 (Text Field) -->
         <div id="u49" class="ax_default text_field" data-label="第一次密码">
-          <input id="u49_input" type="password" value=""/>
+          <input id="u49_input" type="password" value="" name="password"/>
         </div>
       </div>
 
-      <!-- 密码不能为空2 (Rectangle) -->
+      <!-- 密码不能为空2 (Rectangle) --> 
       <div id="u50" class="ax_default box_1" data-label="密码不能为空2">
         <img id="u50_img" class="img " src="register/images/home/电话不能为空_u0.png"/>
         <!-- Unnamed () -->
@@ -431,7 +431,7 @@
       </div>
 
       <!-- 第二次输入密码 (Group) -->
-      <div id="u52" class="ax_default" data-label="第二次输入密码" data-left="20" data-top="282" data-width="322" data-height="41">
+      <div id="u52" class="ax_default" data-label="第二次输入密码" data-left="20" data-top="331" data-width="322" data-height="41">
 
         <!-- 边框 (Dynamic Panel) -->
         <div id="u53" class="ax_default" data-label="边框">
@@ -519,7 +519,7 @@
       </div>
 
       <!-- 电话 (Group) -->
-      <div id="u69" class="ax_default" data-label="电话" data-left="120" data-top="332" data-width="223" data-height="41">
+      <div id="u69" class="ax_default" data-label="电话" data-left="113" data-top="232" data-width="230" data-height="41">
 
         <!-- 边框 (Dynamic Panel) -->
         <div id="u70" class="ax_default" data-label="边框">
@@ -566,7 +566,7 @@
 
         <!-- 姓名 (Text Field) -->
         <div id="u77" class="ax_default text_field" data-label="姓名">
-          <input id="u77_input" type="tel" value=""/>
+          <input id="u77_input" type="tel" value="{{ tel }}" name="tel"/>
         </div>
       </div>
 

@@ -2,8 +2,8 @@
   margin:0px;
   background-image:none;
   position:relative;
-  left:-19px;
-  width:323px;
+  left:-20px;
+  width:322px;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
@@ -573,8 +573,8 @@
 #u29 {
   border-width:0px;
   position:absolute;
-  left:19px;
-  top:332px;
+  left:20px;
+  top:232px;
   width:93px;
   height:40px;
 }
@@ -584,12 +584,13 @@
   top:0px;
   width:93px;
   height:40px;
+  background-color:#000000;
   font-family:'微軟正黑體';
   font-weight:400;
   font-style:normal;
   font-size:20px;
   text-decoration:none;
-  color:#000000;
+  color:#FFFFFF;
 }
 #u29_input:disabled {
   color:grayText;
@@ -716,7 +717,7 @@
 #u35 {
   border-width:0px;
   position:absolute;
-  left:61px;
+  left:73px;
   top:145px;
   width:239px;
   height:15px;
@@ -809,7 +810,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:232px;
+  top:282px;
   width:321px;
   height:40px;
   overflow:hidden;
@@ -958,7 +959,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:233px;
+  top:283px;
   width:320px;
   height:39px;
 }
@@ -1015,7 +1016,7 @@
   border-width:0px;
   position:absolute;
   left:20px;
-  top:282px;
+  top:331px;
   width:321px;
   height:41px;
   overflow:hidden;
@@ -1164,7 +1165,7 @@
   border-width:0px;
   position:absolute;
   left:21px;
-  top:283px;
+  top:332px;
   width:320px;
   height:39px;
 }
@@ -1297,9 +1298,9 @@
 #u70 {
   border-width:0px;
   position:absolute;
-  left:120px;
-  top:332px;
-  width:223px;
+  left:113px;
+  top:232px;
+  width:230px;
   height:41px;
   overflow:hidden;
 }
@@ -1308,7 +1309,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:223px;
+  width:230px;
   height:41px;
   -ms-overflow-x:hidden;
   overflow-x:hidden;
@@ -1354,7 +1355,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:223px;
+  width:230px;
   height:41px;
   visibility:hidden;
   -ms-overflow-x:hidden;
@@ -1401,7 +1402,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:223px;
+  width:230px;
   height:41px;
   visibility:hidden;
   -ms-overflow-x:hidden;
@@ -1446,16 +1447,16 @@
 #u77 {
   border-width:0px;
   position:absolute;
-  left:120px;
-  top:332px;
-  width:222px;
+  left:113px;
+  top:232px;
+  width:229px;
   height:40px;
 }
 #u77_input {
   position:absolute;
   left:0px;
   top:0px;
-  width:222px;
+  width:229px;
   height:40px;
   font-family:'微軟正黑體';
   font-weight:400;
@@ -1500,8 +1501,8 @@
 body.a {  background-color:rgba(255, 255, 255, 1);
   background-image:none;
   position:relative;
-  left:-19px;
-  width:323px;
+  left:-20px;
+  width:322px;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
@@ -1683,8 +1684,8 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u29.a {
   border-width:0px;
   position:absolute;
-  left:19px;
-  top:332px;
+  left:20px;
+  top:232px;
   width:93px;
   height:40px;
 }
@@ -1694,12 +1695,13 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   top:0px;
   width:93px;
   height:40px;
+  background-color:#000000;
   font-family:'微軟正黑體';
   font-weight:400;
   font-style:normal;
   font-size:20px;
   text-decoration:none;
-  color:#000000;
+  color:#FFFFFF;
 }
 #u30.a {
   border-width:0px;
@@ -1740,7 +1742,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u35.a {
   border-width:0px;
   position:absolute;
-  left:61px;
+  left:73px;
   top:145px;
   width:239px;
   height:15px;
@@ -1775,7 +1777,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:20px;
-  top:232px;
+  top:282px;
   width:321px;
   height:40px;
 }
@@ -1813,7 +1815,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:20px;
-  top:233px;
+  top:283px;
   width:320px;
   height:39px;
 }
@@ -1841,7 +1843,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:20px;
-  top:282px;
+  top:331px;
   width:321px;
   height:41px;
 }
@@ -1879,7 +1881,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:21px;
-  top:283px;
+  top:332px;
   width:320px;
   height:39px;
 }
@@ -1924,9 +1926,9 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u70.a {
   border-width:0px;
   position:absolute;
-  left:120px;
-  top:332px;
-  width:223px;
+  left:113px;
+  top:232px;
+  width:230px;
   height:41px;
 }
 #u71.a {
@@ -1962,16 +1964,16 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u77.a {
   border-width:0px;
   position:absolute;
-  left:120px;
-  top:332px;
-  width:222px;
+  left:113px;
+  top:232px;
+  width:229px;
   height:40px;
 }
 #u77_input.a {
   position:absolute;
   left:0px;
   top:0px;
-  width:222px;
+  width:229px;
   height:40px;
   font-family:'微軟正黑體';
   font-weight:400;
