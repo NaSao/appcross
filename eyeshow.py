@@ -119,7 +119,9 @@ class Register(webapp2.RequestHandler):
         discountor.openid = semail
         discountor.name = self.request.get('name')
         discountor.email = semail
-        discountor.sex = self.request.get('sext')
+        sext = self.request.get('sext')
+        if sext=="":
+            discountor.sex = 'man'     
         discountor.password = self.request.get('password')
         tel = self.request.get('tel')
         area = self.request.get('area')
@@ -140,6 +142,7 @@ class Register(webapp2.RequestHandler):
                 'email': semail,
                 'name': discountor.name,
                 'tel': tel,
+                'sext': sext,
                 'area': area
                 }
             template = JINJA_ENVIRONMENT.get_template('register.html')
