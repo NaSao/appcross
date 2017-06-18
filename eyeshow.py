@@ -121,7 +121,9 @@ class Register(webapp2.RequestHandler):
         discountor.email = semail
         sext = self.request.get('sext')
         if sext is None or sext=="":
-            discountor.sex = 'man'     
+            discountor.sex = 'man' 
+        else:
+            discountor.sex=sext    
         discountor.password = self.request.get('password')
         tel = self.request.get('tel')
         area = self.request.get('area')
