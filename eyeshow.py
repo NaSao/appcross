@@ -63,6 +63,7 @@ class MainPage(webapp2.RequestHandler):
             self.response.write(template.render(template_values))
         else:
             discountinfoX = DiscountInfo.query(ndb.AND(DiscountInfo.duuid==duuid,DiscountInfo.state=='0'))
+            print discountinfoX
             if not discountinfoX.get():
                 template_values = {}
                 template = JINJA_ENVIRONMENT.get_template('failpage.html')
