@@ -20,11 +20,111 @@
       $axure.utils.getTransparentGifPath = function() { return 'register/resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'register/resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'register/resources/reload.html'; };
+      
+      $(document).ready(function(){  
+    	  
+        $('#u4').hide(); 
+  	    $('#u2').hide();
+  		$('#u0').hide();  
+  		$('#u37').hide();
+  		$('#u39').hide();
+  		$('#u61').hide();
+  		$('#u63').hide();
+  		  
+          $('#u78').click(function(event){ 
+  		  
+  		var data = $('#u18_input').val();  
+  		data = $.trim(data); 
+  		//alert(data);
+  		if(data == "姓名（拼音）：Zhang San") {  
+  			$('#u4').show();  
+  			event.preventDefault(); 
+  			return;
+  		} else {  
+  			$('#u4').hide();  
+  		} 
+
+  		var data1 = $('#u27_input').val();  
+  		data1 = $.trim(data1); 
+  		//alert(data);
+  		if(data1 == "E-mail") {  
+  			$('#u2').show();  
+  			event.preventDefault();
+  			return;
+  		} else {  
+  			$('#u2').hide();  
+  		} 
+
+  	    var data2 = $('#u36_input').val();  
+  		var z= /^[0-9]*$/;
+          data2 = $.trim(data2); 
+  	    //alert(data);
+          if(data2 == "电话（Tel）") {  
+              $('#u0').show();  
+              event.preventDefault();
+              return;
+          } else if(!z.test(data2)){
+             $('#u37').show();  
+             event.preventDefault();
+             return;
+          } else {  
+              $('#u0').hide();  
+  			$('#u37').hide();  
+          }
+  				
+  	    var data3 = $('#u64_input').val();  
+  		data3 = $.trim(data3); 
+  		//alert(data3);
+  		if(data3 == "请输入密码password") {  
+  			$('#u39').show();  
+  			event.preventDefault();
+  			return;
+  		} else {  
+  			$('#u39').hide();  
+  		} 
+          
+  			
+  			
+  		var data4 = $('#u75_input').val();  
+  		data4 = $.trim(data4); 
+  		//alert(data4);
+  		if(data4 == "请再次输入密码password again") {  
+  			$('#u61').show();  
+  			event.preventDefault();
+  			return;
+  		} else if (data3 != data4){
+  			$('#u61').show();
+  			event.preventDefault();
+  			return;
+  		} else {  
+  			$('#u61').hide();
+  		} 
+  		
+  		$('#price').submit();
+          });
+  		var message = $("#message").val();
+          
+  		if(message == "no"){
+  			$('#u63').show();
+  		}else{
+  			$('#u63').hide();
+  		}
+  		
+  		var area = $("#area").val();
+          
+  		if(area != ""){
+  			$('#u29_input').val()=area;
+  		}
+  		 
+         });
     </script>
   </head>
   <body>
     <div id="base" class="">
-
+	  <input type="hidden" name="message" value="{{ message }}" id="message">
+	  <form action="price" method="post" name="price" id="price">
+	  <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
+	  <input type="hidden" value="{{ area }}" id="selectarea">
       <!-- 电话不能为空 (Rectangle) -->
       <div id="u0" class="ax_default box_1" data-label="电话不能为空">
         <img id="u0_img" class="img " src="register/images/home/电话不能为空_u0.png"/>
@@ -188,7 +288,7 @@
 
       <!-- Unnamed (Droplist) -->
       <div id="u29" class="ax_default droplist">
-        <select id="u29_input">
+        <select id="u29_input" name="area">
           <option value="+33">+33</option>
           <option value="+86">+86</option>
           <option value="+852">+852</option>
@@ -478,6 +578,7 @@
           <p style="font-size:14px;"><span>注册立注享受最优折扣</span></p><p style="font-size:12px;"><span>REGISTER</span></p>
         </div>
       </div>
+      </form>
     </div>
   </body>
 </html>

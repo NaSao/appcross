@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <title>Price</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=0.6, user-scalable=yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link href="price/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="price/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
@@ -20,78 +20,86 @@
       $axure.utils.getTransparentGifPath = function() { return 'price/resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'price/resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'price/resources/reload.html'; };
-	  $(document).ready(function(){  
-	  
-		$('#u0').hide();  
-		$('#u16').hide();
-		  
-        $('#u18').click(function(event){ 
-		   
+      $(document).ready(function(){  
+    	  
+  		$('#u0').hide();  
+  		$('#u14').hide();
+  		  
+          $('#u12').click(function(event){ 
+  		   
 
-	    var data2 = $('#u14_input').val();  
-		var z= /^[0-9]+\.?[0-9]*$/;
-        data2 = $.trim(data2); 
-	    //alert(data);
-        if(data2 == "原价Price") {  
-            $('#u0').show();  
-            event.preventDefault();
-            return;
-        } else if(!z.test(data2)){
-           $('#u16').show();  
-           event.preventDefault();
-           return;
-        } else {  
-            $('#u0').hide();  
-			$('#u16').hide();  
-        }
-				
-        $('#discount').submit();
-        
-			
-        });
+  	    var data2 = $('#u10_input').val();  
+  		var z= /^[0-9]+\.?[0-9]*$/;
+          data2 = $.trim(data2); 
+  	    //alert(data);
+          if(data2 == "原价Price") {  
+              $('#u0').show();  
+              event.preventDefault();
+              return;
+          } else if(!z.test(data2)){
+             $('#u14').show();  
+             event.preventDefault();
+             return;
+          } else {  
+              $('#u0').hide();  
+  			$('#u14').hide();  
+          }
+  				
+          $('#discount').submit();
+          
+  			
+          });
 
-		 
-       });
+  		 
+         });
     </script>
   </head>
   <body>
     <div id="base" class="">
-	 <form action="discount" method="post" name="discount" id="discount">
+	  <form action="discount" method="post" name="discount" id="discount">
 	  <input type="hidden" value="{{ discountorOpenid }}" name="discountorOpenid">
-      <!-- 价格不能为空 (Rectangle) -->
-      <div id="u0" class="ax_default box_1" data-label="价格不能为空">
-        <img id="u0_img" class="img " src="price/images/home/价格不能为空_u0.png"/>
+      <!-- 原价不能为空 (Rectangle) -->
+      <div id="u0" class="ax_default box_1" data-label="原价不能为空">
+        <img id="u0_img" class="img " src="price/images/home/原价不能为空_u0.png"/>
         <!-- Unnamed () -->
         <div id="u1" class="text">
-          <p><span>必填</span></p>
-        </div>
-      </div>
-
-      <!-- crossmode (Image) -->
-      <div id="u2" class="ax_default image" data-label="crossmode">
-        <img id="u2_img" class="img " src="price/images/home/crossmode_u2.jpg"/>
-        <!-- Unnamed () -->
-        <div id="u3" class="text" style="display:none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- eyeshow (Image) -->
-      <div id="u4" class="ax_default image" data-label="eyeshow">
-        <img id="u4_img" class="img " src="price/images/home/eyeshow_u4.png"/>
-        <!-- Unnamed () -->
-        <div id="u5" class="text" style="display:none; visibility: hidden">
-          <p><span></span></p>
+          <p><span>请输入原价Price</span></p>
         </div>
       </div>
 
       <!-- 原价price (Group) -->
-      <div id="u6" class="ax_default" data-label="原件price" data-left="363" data-top="409" data-width="276" data-height="73">
+      <div id="u2" class="ax_default" data-label="原价price" data-left="81" data-top="192" data-width="262" data-height="42">
 
         <!-- 边框 (Dynamic Panel) -->
-        <div id="u7" class="ax_default" data-label="边框">
-          <div id="u7_state0" class="panel_state" data-label="普通" style="">
-            <div id="u7_state0_content" class="panel_state_content">
+        <div id="u3" class="ax_default" data-label="边框">
+          <div id="u3_state0" class="panel_state" data-label="普通" style="">
+            <div id="u3_state0_content" class="panel_state_content">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u4" class="ax_default box_1">
+                <img id="u4_img" class="img " src="price/images/home/u4.png"/>
+                <!-- Unnamed () -->
+                <div id="u5" class="text" style="display:none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u3_state1" class="panel_state" data-label="焦点" style="visibility: hidden;">
+            <div id="u3_state1_content" class="panel_state_content">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u6" class="ax_default box_1">
+                <img id="u6_img" class="img " src="price/images/home/u6.png"/>
+                <!-- Unnamed () -->
+                <div id="u7" class="text" style="display:none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u3_state2" class="panel_state" data-label="必填" style="visibility: hidden;">
+            <div id="u3_state2_content" class="panel_state_content">
 
               <!-- Unnamed (Rectangle) -->
               <div id="u8" class="ax_default box_1">
@@ -103,71 +111,63 @@
               </div>
             </div>
           </div>
-          <div id="u7_state1" class="panel_state" data-label="焦点" style="visibility: hidden;">
-            <div id="u7_state1_content" class="panel_state_content">
-
-              <!-- Unnamed (Rectangle) -->
-              <div id="u10" class="ax_default box_1">
-                <img id="u10_img" class="img " src="price/images/home/u10.png"/>
-                <!-- Unnamed () -->
-                <div id="u11" class="text" style="display:none; visibility: hidden">
-                  <p><span></span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="u7_state2" class="panel_state" data-label="必填" style="visibility: hidden;">
-            <div id="u7_state2_content" class="panel_state_content">
-
-              <!-- Unnamed (Rectangle) -->
-              <div id="u12" class="ax_default box_1">
-                <img id="u12_img" class="img " src="price/images/home/u12.png"/>
-                <!-- Unnamed () -->
-                <div id="u13" class="text" style="display:none; visibility: hidden">
-                  <p><span></span></p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- 原价 (Text Field) -->
-        <div id="u14" class="ax_default text_field" data-label="姓名">
-          <input id="u14_input" type="text" value=""/>
+        <div id="u10" class="ax_default text_field" data-label="原价">
+          <input id="u10_input" type="text" value="" name="price"/>
         </div>
       </div>
 
       <!-- Unnamed (Group) -->
-      <div id="u15" class="ax_default" data-left="0" data-top="0" data-width="1" data-height="1">
+      <div id="u11" class="ax_default" data-left="0" data-top="0" data-width="1" data-height="1">
       </div>
 
-      <!-- 输入数字 (Rectangle) -->
-      <div id="u16" class="ax_default box_1" data-label="输入数字">
-        <img id="u16_img" class="img " src="price/images/home/输入数字_u16.png"/>
+      <!-- 登录按钮 (Rectangle) -->
+      <div id="u12" class="ax_default box_1" data-label="登录按钮">
+        <img id="u12_img" class="img " src="price/images/home/登录按钮_u12.png"/>
         <!-- Unnamed () -->
-        <div id="u17" class="text">
-          <p><span>请输入数字</span></p><p><span>（小数点为&quot;.&quot;）</span></p>
+        <div id="u13" class="text">
+          <p style="font-size:14px;"><span>获取打折二维码</span></p><p style="font-size:13px;"><span>QRCODE</span></p>
         </div>
       </div>
 
-      <!-- 打折按钮 (Rectangle) -->
-      <div id="u18" class="ax_default box_1" data-label="打折按钮">
-        <img id="u18_img" class="img " src="price/images/home/打折按钮_u18.png"/>
+      <!-- 请填写数字 (Rectangle) -->
+      <div id="u14" class="ax_default box_1" data-label="请填写数字">
+        <img id="u14_img" class="img " src="price/images/home/原价不能为空_u0.png"/>
         <!-- Unnamed () -->
-        <div id="u19" class="text">
-          <p><span>获取打折二维码</span></p><p><span>QRCODE</span></p>
+        <div id="u15" class="text">
+          <p><span>请填写数字（小数点为&quot;.&quot;）</span></p>
         </div>
       </div>
 
-      <!-- 欧元符号 (Rectangle) -->
-      <div id="u20" class="ax_default box_1" data-label="欧元符号">
-        <img id="u20_img" class="img " src="price/images/home/欧元符号_u20.png"/>
+      <!-- eyeshow (Image) -->
+      <div id="u16" class="ax_default image" data-label="eyeshow">
+        <img id="u16_img" class="img " src="price/images/home/eyeshow_u16.png"/>
+        <!-- Unnamed () -->
+        <div id="u17" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u18" class="ax_default image">
+        <img id="u18_img" class="img " src="price/images/home/u18.jpg"/>
+        <!-- Unnamed () -->
+        <div id="u19" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u20" class="ax_default box_1">
+        <img id="u20_img" class="img " src="price/images/home/u20.png"/>
         <!-- Unnamed () -->
         <div id="u21" class="text">
           <p><span>€</span></p>
         </div>
       </div>
-	 </form>
+      </form>
     </div>
   </body>
 </html>
