@@ -316,7 +316,7 @@
   left:0px;
   top:0px;
   width:120px;
-  height:62px;
+  height:64px;
 }
 #u18 {
   border-width:0px;
@@ -324,13 +324,13 @@
   left:120px;
   top:459px;
   width:120px;
-  height:62px;
+  height:64px;
 }
 #u19 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:23px;
+  top:24px;
   width:116px;
   visibility:hidden;
   word-wrap:break-word;
@@ -362,5 +362,33 @@
   left:2px;
   top:8px;
   width:56px;
+  word-wrap:break-word;
+}
+#u22_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:321px;
+  height:41px;
+}
+#u22 {
+  border-width:0px;
+  position:absolute;
+  left:20px;
+  top:302px;
+  width:320px;
+  height:40px;
+  font-family:'微軟正黑體 Bold', '微軟正黑體 Regular', '微軟正黑體';
+  font-weight:700;
+  font-style:normal;
+  font-size:14px;
+}
+#u23 {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:11px;
+  width:316px;
   word-wrap:break-word;
 }

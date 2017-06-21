@@ -4,6 +4,8 @@ import urllib2
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
+from google.appengine.api import app_identity
+from google.appengine.api import mail
 #from google.appengine.api import urlfetch
 
 import jinja2
@@ -181,6 +183,26 @@ class Discounting(webapp2.RequestHandler):
     
 # [END Discounting]
 
+
+# [START Discounting]
+class PreFindPass(webapp2.RequestHandler):
+    
+    def post(self):
+        template_values = {                }
+        template = JINJA_ENVIRONMENT.get_template('prefindpass.html')
+        self.response.write(template.render(template_values))
+# [END Discounting]
+
+# [START Discounting]
+class FindPass(webapp2.RequestHandler):
+    
+    def post(self):
+        template_values = {                }
+        template = JINJA_ENVIRONMENT.get_template('prefindpass.html')
+        self.response.write(template.render(template_values))
+# [END Discounting]
+
+
 # [START QCode]
 class QCode(webapp2.RequestHandler):
 
@@ -207,5 +229,7 @@ app = webapp2.WSGIApplication([
     ('/register',PreRegister),
     ('/price', Register),
     ('/discount', Discounting),
+    ('/prefindpass', PreFindPass),
+    ('/findpass', FindPass),
 ], debug=True)
 # [END app]
