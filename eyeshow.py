@@ -11,6 +11,8 @@ from google.appengine.api import mail
 import jinja2
 import webapp2
 import uuid
+import socket
+import string
 
 
 
@@ -197,9 +199,28 @@ class PreFindPass(webapp2.RequestHandler):
 class FindPass(webapp2.RequestHandler):
     
     def post(self):
-        template_values = {                }
+        email = self.request.get('email')
+        discountorX = Discountor.query(Discountor.email==email)
+        message = 'yes'
+        if not discountorX.get():
+            message = 'no'
+        else:
+            sender_address = (
+                    'Example.com Support <{}@appspot.gserviceaccount.com>'.format(
+                        app_identity.get_application_id()))
+            subject = 'Eyeshow 系统找回密码'
+            body = """非常感谢您使关注Cross Model 欢迎您在 Eyeshow 购物
+                      您的登陆密码是 
+                       {}""".format(discountorX.get(0).password)
+            mail.send_mail(sender_address, email, subject, body)
+        
+        template_values = {
+            'message': message
+        }
         template = JINJA_ENVIRONMENT.get_template('prefindpass.html')
         self.response.write(template.render(template_values))
+        
+    
 # [END Discounting]
 
 

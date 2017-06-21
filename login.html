@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Home</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -20,14 +20,15 @@
       $axure.utils.getTransparentGifPath = function() { return 'login/resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'login/resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'login/resources/reload.html'; };
-      $(document).ready(function(){  
+      
+$(document).ready(function(){  
     	  
           $('#u0').hide(); 
-  	    $('#u16').hide();
-  		$('#u29').hide();
+  	    $('#u14').hide();
+  		$('#u27').hide();
   		
   		  
-          $('#u14').click(function(event){
+          $('#u31').click(function(event){
   		
   		var data1 = $('#u12_input').val();  
   		data1 = $.trim(data1); 
@@ -41,15 +42,15 @@
   		} 
 
   	    	
-  	    var data2 = $('#u26_input').val();  
+  	    var data2 = $('#u24_input').val();  
   		data2 = $.trim(data2); 
   		//alert(data2);
   		if(data2 == "密码Password") {  
-  			$('#u16').show();  
+  			$('#u14').show();  
   			event.preventDefault(); 
   			return;
   		} else {  
-  			$('#u16').hide();  
+  			$('#u14').hide();  
   		} 
           
   		$('#login').submit();
@@ -59,9 +60,9 @@
           var message = $("#message").val();
           
   		if(message == "no"){
-  			$('#u29').show();
+  			$('#u27').show();
   		}else{
-  			$('#u29').hide();
+  			$('#u27').hide();
   		}
           
          });
@@ -69,7 +70,7 @@
   </head>
   <body>
     <div id="base" class="">
-	<input type="hidden" name="message" value="{{ message }}" id="message">
+	  <input type="hidden" name="message" value="{{ message }}" id="message">
 	  <form  action="login" method="post" name="login" id="login">
       <!-- 邮箱不能为空 (Rectangle) -->
       <div id="u0" class="ax_default box_1" data-label="邮箱不能为空">
@@ -90,7 +91,7 @@
       </div>
 
       <!-- 邮件 (Group) -->
-      <div id="u4" class="ax_default" data-label="邮件" data-left="20" data-top="149" data-width="321" data-height="41">
+      <div id="u4" class="ax_default" data-label="邮件" data-left="20" data-top="139" data-width="321" data-height="41">
 
         <!-- 边框 (Dynamic Panel) -->
         <div id="u5" class="ax_default" data-label="边框">
@@ -145,35 +146,39 @@
       <div id="u13" class="ax_default" data-left="0" data-top="0" data-width="1" data-height="1">
       </div>
 
-      <!-- 登录按钮 (Rectangle) -->
-      <div id="u14" class="ax_default box_1" data-label="登录按钮">
-        <img id="u14_img" class="img " src="login/images/home/登录按钮_u14.png"/>
+      <!-- 密码不能为空1 (Rectangle) -->
+      <div id="u14" class="ax_default box_1" data-label="密码不能为空1">
+        <img id="u14_img" class="img " src="login/images/home/邮箱不能为空_u0.png"/>
         <!-- Unnamed () -->
         <div id="u15" class="text">
-          <p style="font-size:14px;"><span>登录</span></p><p style="font-size:12px;"><span>LOGIN</span></p>
-        </div>
-      </div>
-
-      <!-- 密码不能为空1 (Rectangle) -->
-      <div id="u16" class="ax_default box_1" data-label="密码不能为空1">
-        <img id="u16_img" class="img " src="login/images/home/邮箱不能为空_u0.png"/>
-        <!-- Unnamed () -->
-        <div id="u17" class="text">
-          <p><span>请输入密码Password</span></p>
+          <p><span>请输入密码password</span></p>
         </div>
       </div>
 
       <!-- 第一次输入密码 (Group) -->
-      <div id="u18" class="ax_default" data-label="第一次输入密码" data-left="20" data-top="198" data-width="321" data-height="41">
+      <div id="u16" class="ax_default" data-label="第一次输入密码" data-left="20" data-top="188" data-width="321" data-height="41">
 
         <!-- 边框 (Dynamic Panel) -->
-        <div id="u19" class="ax_default" data-label="边框">
-          <div id="u19_state0" class="panel_state" data-label="普通" style="">
-            <div id="u19_state0_content" class="panel_state_content">
+        <div id="u17" class="ax_default" data-label="边框">
+          <div id="u17_state0" class="panel_state" data-label="普通" style="">
+            <div id="u17_state0_content" class="panel_state_content">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u18" class="ax_default box_1">
+                <img id="u18_img" class="img " src="login/images/home/u6.png"/>
+                <!-- Unnamed () -->
+                <div id="u19" class="text" style="display:none; visibility: hidden">
+                  <p><span></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u17_state1" class="panel_state" data-label="焦点" style="visibility: hidden;">
+            <div id="u17_state1_content" class="panel_state_content">
 
               <!-- Unnamed (Rectangle) -->
               <div id="u20" class="ax_default box_1">
-                <img id="u20_img" class="img " src="login/images/home/u6.png"/>
+                <img id="u20_img" class="img " src="login/images/home/u8.png"/>
                 <!-- Unnamed () -->
                 <div id="u21" class="text" style="display:none; visibility: hidden">
                   <p><span></span></p>
@@ -181,27 +186,14 @@
               </div>
             </div>
           </div>
-          <div id="u19_state1" class="panel_state" data-label="焦点" style="visibility: hidden;">
-            <div id="u19_state1_content" class="panel_state_content">
+          <div id="u17_state2" class="panel_state" data-label="必填" style="visibility: hidden;">
+            <div id="u17_state2_content" class="panel_state_content">
 
               <!-- Unnamed (Rectangle) -->
               <div id="u22" class="ax_default box_1">
-                <img id="u22_img" class="img " src="login/images/home/u8.png"/>
+                <img id="u22_img" class="img " src="login/images/home/u10.png"/>
                 <!-- Unnamed () -->
                 <div id="u23" class="text" style="display:none; visibility: hidden">
-                  <p><span></span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="u19_state2" class="panel_state" data-label="必填" style="visibility: hidden;">
-            <div id="u19_state2_content" class="panel_state_content">
-
-              <!-- Unnamed (Rectangle) -->
-              <div id="u24" class="ax_default box_1">
-                <img id="u24_img" class="img " src="login/images/home/u10.png"/>
-                <!-- Unnamed () -->
-                <div id="u25" class="text" style="display:none; visibility: hidden">
                   <p><span></span></p>
                 </div>
               </div>
@@ -210,38 +202,60 @@
         </div>
 
         <!-- 第一次密码 (Text Field) -->
-        <div id="u26" class="ax_default text_field" data-label="第一次密码">
-          <input id="u26_input" type="password" value="" name="password"/>
+        <div id="u24" class="ax_default text_field" data-label="第一次密码">
+          <input id="u24_input" type="password" value="" name="password"/>
         </div>
       </div>
-	  </form>
-	  <form  action="register" method="post" name="register" id="register">
-      <!-- 注册按钮 (Rectangle) -->
-      <div id="u27" class="ax_default box_1" data-label="注册按钮" onClick="document.register.submit();">
-        <img id="u27_img" class="img " src="login/images/home/登录按钮_u14.png"/>
+
+      
+
+      <!-- 邮箱或密码错误 (Rectangle) -->
+      <div id="u27" class="ax_default box_1" data-label="邮箱或密码错误">
+        <img id="u27_img" class="img " src="login/images/home/邮箱不能为空_u0.png"/>
         <!-- Unnamed () -->
         <div id="u28" class="text">
-          <p style="font-size:14px;"><span>注册</span></p><p style="font-size:12px;"><span>REGISTER</span></p>
-        </div>
-      </div>
-	  </form>
-      <!-- 邮箱或密码错误 (Rectangle) -->
-      <div id="u29" class="ax_default box_1" data-label="邮箱或密码错误">
-        <img id="u29_img" class="img " src="login/images/home/邮箱不能为空_u0.png"/>
-        <!-- Unnamed () -->
-        <div id="u30" class="text">
           <p><span>邮箱或密码错误！！!</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
-      <div id="u31" class="ax_default image">
-        <img id="u31_img" class="img " src="login/images/home/u31.jpg"/>
+      <div id="u29" class="ax_default image">
+        <img id="u29_img" class="img " src="login/images/home/u29.jpg"/>
         <!-- Unnamed () -->
-        <div id="u32" class="text" style="display:none; visibility: hidden">
+        <div id="u30" class="text" style="display:none; visibility: hidden">
           <p><span></span></p>
         </div>
       </div>
+
+      <!-- 登录按钮 (Rectangle) -->
+      <div id="u31" class="ax_default box_1" data-label="登录按钮">
+        <img id="u31_img" class="img " src="login/images/home/注册按钮_u25.png"/>
+        <!-- Unnamed () -->
+        <div id="u32" class="text">
+          <p style="font-size:14px;"><span>登录</span></p><p style="font-size:12px;"><span>LOGIN</span></p>
+        </div>
+      </div>
+      </form>
+      <form  action="register" method="post" name="register" id="register">
+      <!-- 注册按钮 (Rectangle) -->
+      <div id="u25" class="ax_default box_1" data-label="注册按钮" onClick="document.register.submit();">
+        <img id="u25_img" class="img " src="login/images/home/注册按钮_u25.png"/>
+        <!-- Unnamed () -->
+        <div id="u26" class="text">
+          <p style="font-size:14px;"><span>注册</span></p><p style="font-size:12px;"><span>REGISTER</span></p>
+        </div>
+      </div>
+	  </form>
+	  <form  action="prefindpass" method="post" name="prefindpass" id="prefindpass">
+      <!-- 忘记密码 (Rectangle) -->
+      <div id="u33" class="ax_default box_1" data-label="忘记密码" onClick="document.prefindpass.submit();">
+        <img id="u33_img" class="img " src="login/images/home/忘记密码_u33.png"/>
+        <!-- Unnamed () -->
+        <div id="u34" class="text">
+          <p><span>忘记密码</span></p>
+        </div>
+      </div>
+      </form>
     </div>
   </body>
 </html>
