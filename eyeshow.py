@@ -212,7 +212,7 @@ class FindPass(webapp2.RequestHandler):
             subject = 'Eyeshow ϵͳ�һ�����'
             body = """�ǳ���л��ʹ��עCross Model ��ӭ���� Eyeshow ����
                       ���ĵ�½������ 
-                       {}""".format(discountorX.get(0).password)
+                       {}""".format(discountorX.get().password)
             mail.send_mail(sender_address, email, subject, body)
         
         template_values = {
