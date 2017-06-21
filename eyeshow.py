@@ -210,8 +210,9 @@ class FindPass(webapp2.RequestHandler):
                     'Example.com Support <{}@appspot.gserviceaccount.com>'.format(
                         app_identity.get_application_id()))
             subject = 'Eyeshow ϵͳ�һ�����'
-            body = """�ǳ���л��ʹ��עCross Model ��ӭ���� Eyeshow ����
-                      ���ĵ�½������ 
+            body = """非常感谢您关注 Cross Mode 欢迎您在 Eyeshow 购物
+            
+                      您的登陆密码是
                        {}""".format(discountorX.get().password)
             mail.send_mail(sender_address, email, subject, body)
         
