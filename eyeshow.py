@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # [START imports]
 import os
 import urllib2
@@ -208,9 +209,9 @@ class FindPass(webapp2.RequestHandler):
             sender_address = (
                     'Example.com Support <{}@appspot.gserviceaccount.com>'.format(
                         app_identity.get_application_id()))
-            subject = 'Eyeshow ÏµÍ³ÕÒ»ØÃÜÂë'
-            body = """·Ç³£¸ÐÐ»ÄúÊ¹¹Ø×¢Cross Model »¶Ó­ÄúÔÚ Eyeshow ¹ºÎï
-                      ÄúµÄµÇÂ½ÃÜÂëÊÇ 
+            subject = 'Eyeshow ÏµÍ³ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½'
+            body = """ï¿½Ç³ï¿½ï¿½ï¿½Ð»ï¿½ï¿½Ê¹ï¿½ï¿½×¢Cross Model ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½ Eyeshow ï¿½ï¿½ï¿½ï¿½
+                      ï¿½ï¿½ï¿½Äµï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
                        {}""".format(discountorX.get(0).password)
             mail.send_mail(sender_address, email, subject, body)
         
