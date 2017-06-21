@@ -206,7 +206,7 @@ class FindPass(webapp2.RequestHandler):
         if not discountorX.get():
             message = 'no'
         else:
-            filename = "logo@3x-100.jpg"
+            filename = "/logo@3x-100.jpg"
             sender_address = 'CROSS MODE SUPPORT <noreply@mystical-healer-168312.appspotmail.com>'
             subject = 'EYESHOW 密码找回/ CROSS MODE'
             body = """亲爱的用户：
