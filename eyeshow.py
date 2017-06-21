@@ -206,7 +206,7 @@ class FindPass(webapp2.RequestHandler):
         if not discountorX.get():
             message = 'no'
         else:
-            sender_address = 'Example.com Support <crossmode@mystical-healer-168312.appspotmail.com>'
+            sender_address = 'CrossMode Support <noreply@mystical-healer-168312.appspotmail.com>'
             subject = 'Eyeshow 密码找回'
             body = """非常感谢您关注 Cross Mode 欢迎您在 Eyeshow 购物
             
