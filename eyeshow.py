@@ -207,11 +207,13 @@ class FindPass(webapp2.RequestHandler):
             message = 'no'
         else:
             sender_address = 'Example.com Support <crossmode@mystical-healer-168312.appspotmail.com>'
-            subject = 'Eyeshow ϵͳ�һ�����'
+            subject = 'Eyeshow 密码找回'
             body = """非常感谢您关注 Cross Mode 欢迎您在 Eyeshow 购物
             
                       您的登陆密码是
-                       {}""".format(discountorX.get().password)
+                       {}
+                       
+        请勿回复此邮件，谢谢""".format(discountorX.get().password)
             mail.send_mail(sender_address, email, subject, body)
         
         template_values = {
