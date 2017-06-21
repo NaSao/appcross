@@ -191,7 +191,7 @@ class PreFindPass(webapp2.RequestHandler):
     
     def post(self):
         template_values = {                }
-        template = JINJA_ENVIRONMENT.get_template('prefindpass.html')
+        template = JINJA_ENVIRONMENT.get_template('forgetpassword.html')
         self.response.write(template.render(template_values))
 # [END Discounting]
 
@@ -217,7 +217,7 @@ class FindPass(webapp2.RequestHandler):
         template_values = {
             'message': message
         }
-        template = JINJA_ENVIRONMENT.get_template('prefindpass.html')
+        template = JINJA_ENVIRONMENT.get_template('forgetpassword.html')
         self.response.write(template.render(template_values))
         
     
